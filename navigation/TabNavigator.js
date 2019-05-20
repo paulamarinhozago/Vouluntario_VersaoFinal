@@ -14,8 +14,8 @@ const TabNavigator = createBottomTabNavigator({
             tabBarLabel: 'Home',
             tabBarIcon: () => {
                 <Image
-                    source={require('../assets/home.png')}
-                    style={{width: 10, height: 10}} />
+                    source={require('../assets/botao-home (1).png')}
+                    style={{width: 32, height: 32}} />
             }
         },
         tabBarOptions: { 

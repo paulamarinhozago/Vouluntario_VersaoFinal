@@ -9,7 +9,6 @@ class Signup extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Signup</Text>
         <TextInput
             style={styles.border}
             value={this.props.user.email}

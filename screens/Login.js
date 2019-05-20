@@ -17,7 +17,6 @@ class Login extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Login</Text>
         <TextInput
             style={styles.border}
             value={this.props.user.email}

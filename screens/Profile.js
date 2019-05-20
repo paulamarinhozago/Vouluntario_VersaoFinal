@@ -7,16 +7,8 @@ class Profile extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Profile {this.props.counter}</Text>
+        <Text>Profile</Text>
       </View>
     );
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-    counter: state
-  }
-}
-
-export default connect(mapStateToProps) (Profile)

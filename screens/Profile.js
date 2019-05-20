@@ -1,8 +1,9 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import { connect } from 'react-redux'
 import styles from '../styles'
 
-export default class Profile extends React.Component {
+class Profile extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -11,3 +12,11 @@ export default class Profile extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    counter: state.counter
+  }
+}
+
+export default connect(mapStateToProps) (Profile)

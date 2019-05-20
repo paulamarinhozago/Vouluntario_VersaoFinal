@@ -1,13 +1,39 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TextInput } from 'react-native';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { updateEmail, updatePassword } from '../actions/user'
 import styles from '../styles'
 
-export default class Signup extends React.Component {
+class Signup extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Text>Signup</Text>
+        <TextInput
+            value={this.props.user.email}
+            onChangeText={input => this.props.updateEmail(input)}
+            placeholder = 'E-mail'
+        />
+        <TextInput
+            value={this.props.user.password}
+            onChangeText={input => this.props.updatePassword(input)}
+            placeholder = 'Password'
+        />
+        <Button title='Sign Up' onPress={() => this.props.navigate('Signup')} />
       </View>
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({updateEmail, updatePassword}, dispatch)
+}
+  
+const mapStateToProps = (state) => {
+    return {
+      user: state.user
+    }
+}
+  
+export default connect(mapStateToProps, mapDispatchToProps) (Signup)

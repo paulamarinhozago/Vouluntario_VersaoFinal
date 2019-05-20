@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text, View, TextInput } from 'react-native';
+import { Text, View, TextInput, Button } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { updateEmail } from '../actions/user'
+import { updateEmail, updatePassword } from '../actions/user'
 import styles from '../styles'
 
 class Login extends React.Component {
@@ -11,13 +11,13 @@ class Login extends React.Component {
       <View style={styles.container}>
         <Text>Login</Text>
         <TextInput
-            value={this.props.user}
+            value={this.props.user.email}
             onChangeText={input => this.props.updateEmail(input)}
             placeholder = 'E-mail'
         />
         <TextInput
-            value=''
-            onChangeText={input => console.log(input)}
+            value={this.props.user.password}
+            onChangeText={input => this.props.updatePassword(input)}
             placeholder = 'Password'
         />
       </View>
@@ -26,12 +26,12 @@ class Login extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({updateEmail}, dispatch)
+    return bindActionCreators({updateEmail, updatePassword}, dispatch)
 }
   
 const mapStateToProps = (state) => {
     return {
-      user: state
+      user: state.user
     }
 }
   

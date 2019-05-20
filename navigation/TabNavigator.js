@@ -13,7 +13,7 @@ const TabNavigator = createBottomTabNavigator({
     navigationOptions: {
       tabBarLabel: ' ',
       tabBarIcon: () => {
-          <Ionicons name = 'home' size={32} />
+          <Ionicons name = 'md-home' size={32} />
       }
     }
   },

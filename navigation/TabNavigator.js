@@ -11,7 +11,7 @@ const TabNavigator = createBottomTabNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
-      tabBarLabel: '',
+      tabBarLabel: ' ',
       tabBarIcon: () => {
           <Ionicons name = 'ios-home' size={32} />
       }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TextInput, Button } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { updateEmail, updatePassword } from '../actions/user'
@@ -11,16 +11,21 @@ class Login extends React.Component {
       <View style={styles.container}>
         <Text>Login</Text>
         <TextInput
+            style={styles.border}
             value={this.props.user.email}
             onChangeText={input => this.props.updateEmail(input)}
             placeholder = 'E-mail'
         />
         <TextInput
+            style={styles.border}
             value={this.props.user.password}
             onChangeText={input => this.props.updatePassword(input)}
             placeholder = 'Password'
+            secureTextEntry={true}
         />
-        <Button title='Signup' onPress={() => this.props.navigation.navigate('Signup')} />
+        <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Signup')} >
+            <Text>Signup</Text>
+        </TouchableOpacity>
       </View>
     );
   }

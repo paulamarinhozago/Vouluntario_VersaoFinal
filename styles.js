@@ -9,10 +9,10 @@ export default styles = StyleSheet.create({
     },
 
     button: {
-      maginTop:20,
+      marginTop:20,
       paddingVertical: 10,
       alignItems: 'center',
-      borderColor: '#d3d3d3',
+      borderColor: gray,
       borderWidth: 1,
       borderRadius: 5,
       width: 200
@@ -23,7 +23,7 @@ export default styles = StyleSheet.create({
       margin:10,
       padding: 15,
       fontSize: 16,
-      borderColor: 'd3d3d3',
+      borderColor: gray,
       borderBottomWidth: 1,
       textAlign: 'center'
     },

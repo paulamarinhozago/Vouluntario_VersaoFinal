@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text, View, Button, Image } from 'react-native';
 import Home from '../screens/Home'
 import Search from '../screens/Search'
 import Upload from '../screens/Upload'
@@ -10,13 +11,16 @@ const TabNavigator = createBottomTabNavigator({
     Home: {
         screen: Home,
         navigationOptions: {
-            tabBarLabel: ' ',
+            tabBarLabel: 'Home',
             tabBarIcon: () => {
-                <Image>
+                <Image
                     source={require('../images/home.png')}
-                    style={{width: 32, height: 32}}>
+                    style={{width: 10, height: 10}}>
                 </Image>
             }
+        },
+        tabBarOptions: { 
+            showIcon: true 
         }
   },
   Search: Search,
@@ -24,5 +28,7 @@ const TabNavigator = createBottomTabNavigator({
   Activity: Activity,
   Profile: Profile
 });
+
+
 
 export default createAppContainer(TabNavigator);

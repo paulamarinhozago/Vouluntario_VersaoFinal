@@ -1,5 +1,4 @@
 import React from 'react';
-import { Ionicons } from '@expo/vector-icons';
 import Home from '../screens/Home'
 import Search from '../screens/Search'
 import Upload from '../screens/Upload'
@@ -8,14 +7,18 @@ import Profile from '../screens/Profile'
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 const TabNavigator = createBottomTabNavigator({
-  Home: {
-    screen: Home,
-    navigationOptions: {
-      tabBarLabel: ' ',
-      tabBarIcon: () => {
-          <Ionicons name = {'ios-home'} size={32} />
-      }
-    }
+    Home: {
+        screen: Home,
+        navigationOptions: {
+            tabBarLabel: ' ',
+            tabBarIcon: () => {
+                <Image>
+                    source={require('../images/home.png')}
+                    style={{width=32, height=32}}>
+                </Image>
+            
+            }
+        }
   },
   Search: Search,
   Upload: Upload,

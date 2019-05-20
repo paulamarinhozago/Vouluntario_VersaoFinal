@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TextInput } from 'react-native';
+import { Text, View, TextInput, Button } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { updateEmail, updatePassword } from '../actions/user'
@@ -20,7 +20,6 @@ class Signup extends React.Component {
             onChangeText={input => this.props.updatePassword(input)}
             placeholder = 'Password'
         />
-        <Button title='Sign Up' onPress={() => this.props.navigate('Signup')} />
       </View>
     );
   }

@@ -20,6 +20,7 @@ class Login extends React.Component {
             onChangeText={input => this.props.updatePassword(input)}
             placeholder = 'Password'
         />
+        <Button title='Signup' onPress={() => this.props.navigation.navigate('Signup')} />
       </View>
     );
   }

@@ -14,7 +14,7 @@ const TabNavigator = createBottomTabNavigator({
             tabBarLabel: 'Home',
             tabBarIcon: () => {
                 <Image
-                    source={require('../images/home.png')}
+                    source={require('../assets/home.png')}
                     style={{width: 10, height: 10}}>
                 </Image>
             }
@@ -28,7 +28,5 @@ const TabNavigator = createBottomTabNavigator({
   Activity: Activity,
   Profile: Profile
 });
-
-
 
 export default createAppContainer(TabNavigator);

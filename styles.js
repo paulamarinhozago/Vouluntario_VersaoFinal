@@ -19,7 +19,7 @@ export default styles = StyleSheet.create({
     },
 
     border: {
-      width: 85%,
+      width: '85%',
       margin:10,
       padding: 15,
       fontSize: 16,

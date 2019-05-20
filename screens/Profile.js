@@ -7,7 +7,7 @@ class Profile extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Profile</Text>
+        <Text>Profile {this.props.counter}</Text>
       </View>
     );
   }

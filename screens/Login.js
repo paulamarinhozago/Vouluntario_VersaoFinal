@@ -8,9 +8,10 @@ import styles from '../styles'
 class Login extends React.Component {
 
   login = () => {
-    this.props.navigation.navigate('Home')
+    //if(this.props.user.email) {
+        this.props.navigation.navigate('Home')
+    //}
   }
-
 
   render() {
     return (
@@ -32,7 +33,7 @@ class Login extends React.Component {
         <TouchableOpacity style={styles.button} onPress={() => this.login()} >
             <Text>Login</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Signup')} >
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Signup')} >
             <Text>Signup</Text>
         </TouchableOpacity>
       </View>

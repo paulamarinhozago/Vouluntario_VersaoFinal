@@ -26,7 +26,7 @@ class Home extends React.Component {
         <Text>Home {this.props.counter}</Text>
         <Text>{this.state.count}</Text>
         <Button title='Add' onPress={() => this.add()} />
-        <Button title='Add' onPress={() => this.subtract()} />
+        <Button title='Subtract' onPress={() => this.subtract()} />
       </View>
     );
   }
@@ -34,7 +34,7 @@ class Home extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    counter: state.counter
+    counter: state
   }
 }
 

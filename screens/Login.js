@@ -1,15 +1,18 @@
 import React from 'react';
 import { Text, View, TextInput } from 'react-native';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { updateEmail } from '../actions/user'
 import styles from '../styles'
 
-export default class Login extends React.Component {
+class Login extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Text>Login</Text>
         <TextInput
-            value=''
-            onChangeText={input => console.log(input)}
+            value={this.props.user}
+            onChangeText={input => this.props.updateEmail(input)}
             placeholder = 'E-mail'
         />
         <TextInput
@@ -21,3 +24,15 @@ export default class Login extends React.Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({updateEmail}, dispatch)
+}
+  
+const mapStateToProps = (state) => {
+    return {
+      user: state
+    }
+}
+  
+export default connect(mapStateToProps, mapDispatchToProps) (Login)

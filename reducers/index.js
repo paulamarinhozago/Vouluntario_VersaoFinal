@@ -1,4 +1,5 @@
-export default (state = 115, action) => {
+import { combineReducers } from 'redux'
+const counter = (state = 115, action) => {
     switch(action.type) {
         case 'ADD':
             return state+1
@@ -8,3 +9,19 @@ export default (state = 115, action) => {
             return state
     }
 }
+
+const user = (state = {}, action) => {
+    switch(action.type) {
+        case 'UPDATE_EMAIL':
+            return {...state, email: action.payload}
+        default:
+            return state
+    }
+} 
+
+const rootReducer = combineReducers({
+    counter,
+    user
+})
+
+export default rootReducer

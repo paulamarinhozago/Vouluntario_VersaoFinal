@@ -2,9 +2,9 @@ import React from 'react';
 import { Text, View, Button, Image } from 'react-native';
 import Home from '../screens/Home'
 import Search from '../screens/Search'
-import Upload from '../screens/Upload'
 import Activity from '../screens/Activity'
 import Profile from '../screens/Profile'
+import Post from '../screens/Post'
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 const TabNavigator = createBottomTabNavigator({
@@ -23,7 +23,7 @@ const TabNavigator = createBottomTabNavigator({
         }
   },
   Search: Search,
-  Upload: Upload,
+  Post: Post,
   Activity: Activity,
   Profile: Profile
 });

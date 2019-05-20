@@ -6,7 +6,8 @@ import { updateEmail, updatePassword } from '../actions/user'
 import styles from '../styles'
 
 class Login extends React.Component {
-
+  
+  //verificar no banco de dados
   login = () => {
     //if(this.props.user.email) {
         this.props.navigation.navigate('Home')

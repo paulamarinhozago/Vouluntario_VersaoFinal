@@ -12,7 +12,7 @@ export default styles = StyleSheet.create({
       marginTop:20,
       paddingVertical: 10,
       alignItems: 'center',
-      borderColor: gray,
+      //borderColor: '#d3d3d3',
       borderWidth: 1,
       borderRadius: 5,
       width: 200
@@ -23,7 +23,7 @@ export default styles = StyleSheet.create({
       margin:10,
       padding: 15,
       fontSize: 16,
-      borderColor: gray,
+      //borderColor: '#d3d3d3',
       borderBottomWidth: 1,
       textAlign: 'center'
     },

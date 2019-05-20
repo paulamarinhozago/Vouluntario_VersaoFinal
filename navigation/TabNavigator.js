@@ -16,7 +16,6 @@ const TabNavigator = createBottomTabNavigator({
                     source={require('../images/home.png')}
                     style={{width=32, height=32}}>
                 </Image>
-            
             }
         }
   },

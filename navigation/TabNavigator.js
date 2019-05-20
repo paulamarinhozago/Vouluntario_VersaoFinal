@@ -15,8 +15,7 @@ const TabNavigator = createBottomTabNavigator({
             tabBarIcon: () => {
                 <Image
                     source={require('../assets/home.png')}
-                    style={{width: 10, height: 10}}>
-                </Image>
+                    style={{width: 10, height: 10}} />
             }
         },
         tabBarOptions: { 

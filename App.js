@@ -8,6 +8,7 @@ import logger from 'redux-logger';
 import SwitchNavigator from './navigation/SwitchNavigator';
 const middleware = applyMiddleware(thunkMiddleware, logger);
 const store = createStore(reducer, middleware);
+// console.disableYellowBox = true;
 
 export default class App extends React.Component {
   render() {

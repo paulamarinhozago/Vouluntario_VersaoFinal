@@ -6,6 +6,12 @@ import { updateEmail, updatePassword } from '../actions/user'
 import styles from '../styles'
 
 class Login extends React.Component {
+
+  login = () => {
+    this.props.navigation.navigate('Home')
+  }
+
+
   render() {
     return (
       <View style={styles.container}>
@@ -23,6 +29,9 @@ class Login extends React.Component {
             placeholder = 'Password'
             secureTextEntry={true}
         />
+        <TouchableOpacity style={styles.button} onPress={() => this.login()} >
+            <Text>Login</Text>
+        </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Signup')} >
             <Text>Signup</Text>
         </TouchableOpacity>

@@ -2,11 +2,14 @@ import React from 'react';
 import { Text, View, Button, Image } from 'react-native';
 import Login from '../screens/Login';
 import SignupScreen from '../screens/Signup';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer, getActiveChildNavigationOptions } from 'react-navigation';
 
 const StackNavigator = createStackNavigator({
     Login: {
-        screen: Login
+        screen: Login,
+        navigationOptions: {
+            header: null
+        }
     },
     Signup: {
         screen: SignupScreen

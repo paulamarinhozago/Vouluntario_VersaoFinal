@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { updateEmail, updatePassword, updateUsername, updateBio } from '../actions/user'
+import { updateEmail, updatePassword, updateUsername } from '../actions/user'
 import styles from '../styles'
 
 class Signup extends React.Component {
@@ -29,12 +29,6 @@ class Signup extends React.Component {
             onChangeText={input => this.props.updateUsername(input)}
             placeholder = 'Username'
         />
-        <TextInput
-            style={styles.border}
-            value={this.props.user.bio}
-            onChangeText={input => this.props.updateBio(input)}
-            placeholder = 'Bio'
-        />
         <TouchableOpacity style={styles.button} onPress={() => console.log(this.props.user)} >
             <Text>Signup</Text>
         </TouchableOpacity>
@@ -44,7 +38,7 @@ class Signup extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({updateEmail, updatePassword}, dispatch)
+    return bindActionCreators({updateEmail, updatePassword, updateUsername}, dispatch)
 }
   
 const mapStateToProps = (state) => {

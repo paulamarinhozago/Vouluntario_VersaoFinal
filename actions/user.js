@@ -10,7 +10,5 @@ export const updateUsername = (username) => {
     return {type: 'UPDATE_USERNAME', payload: username}
 }
 
-export const updateBio = (bio) => {
-    return {type: 'UPDATE_BIO', payload: bio}
-}
+
 

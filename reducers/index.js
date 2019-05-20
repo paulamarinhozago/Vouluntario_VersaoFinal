@@ -18,8 +18,6 @@ const user = (state = {}, action) => {
             return {...state, password: action.payload}
         case 'UPDATE_USERNAME':
             return {...state, username: action.payload}
-        case 'UPDATE_BIO':
-            return {...state, bio: action.payload}
         default:
             return state
     }

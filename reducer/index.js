@@ -1,5 +1,5 @@
 export default (state = 0, action) => {
-    switch(action, type) {
+    switch(action) {
         case 'INCREMENT':
             return state+1
         case 'DECREMENT':

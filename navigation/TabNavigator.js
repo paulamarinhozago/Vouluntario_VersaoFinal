@@ -13,14 +13,14 @@ const TabNavigator = createBottomTabNavigator({
         screen: Home,
         navigationOptions: {
             tabBarLabel: ' ',
-            tabBarIcon: ({focused, tintColor}) => (
+            tabBarIcon: ({focused, horizontal, tintColor}) => (
                 <Ionicons name='md-calendar' size={32} color={focused ? tintColor = 'tomato' : tintColor = 'gray'} />
                 
             ),
         },
     },
     Search: {
-        screen: Home,
+        screen: Search,
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
@@ -30,7 +30,7 @@ const TabNavigator = createBottomTabNavigator({
         },
     },
     Post: {
-        screen: Home,
+        screen: Post,
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
@@ -40,7 +40,7 @@ const TabNavigator = createBottomTabNavigator({
         },
     },
     Activity: {
-        screen: Home,
+        screen: Activity,
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
@@ -50,7 +50,7 @@ const TabNavigator = createBottomTabNavigator({
         },
     },
     Profile: {
-        screen: Home,
+        screen: Profile,
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
@@ -59,6 +59,7 @@ const TabNavigator = createBottomTabNavigator({
             ),
         },
     },
+    
 });
 
 export default createAppContainer(TabNavigator);

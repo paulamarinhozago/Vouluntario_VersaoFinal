@@ -9,6 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 const TabNavigator = createBottomTabNavigator({
+    
     Home: {
         screen: Home,
         navigationOptions: {

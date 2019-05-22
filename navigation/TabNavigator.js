@@ -13,15 +13,52 @@ const TabNavigator = createBottomTabNavigator({
         screen: Home,
         navigationOptions: {
             tabBarLabel: ' ',
-            tabBarIcon: ({focused}) => (
-                <Ionicons name='md-home' size={32} />
-            )
+            tabBarIcon: ({focused, tintColor}) => (
+                <Ionicons name='md-calendar' size={32} color={focused ? tintColor = 'tomato' : tintColor = 'gray'} />
+                
+            ),
         },
-  },
-  Search: Search,
-  Post: Post,
-  Activity: Activity,
-  Profile: Profile
+    },
+    Search: {
+        screen: Home,
+        navigationOptions: {
+            tabBarLabel: ' ',
+            tabBarIcon: ({focused, tintColor}) => (
+                <Ionicons name='md-search' size={32} color={focused ? tintColor = 'tomato' : tintColor = 'gray'} />
+                
+            ),
+        },
+    },
+    Post: {
+        screen: Home,
+        navigationOptions: {
+            tabBarLabel: ' ',
+            tabBarIcon: ({focused, tintColor}) => (
+                <Ionicons name='md-add-circle-outline' size={32} color={focused ? tintColor = 'tomato' : tintColor = 'gray'} />
+                
+            ),
+        },
+    },
+    Activity: {
+        screen: Home,
+        navigationOptions: {
+            tabBarLabel: ' ',
+            tabBarIcon: ({focused, tintColor}) => (
+                <Ionicons name='md-heart' size={32} color={focused ? tintColor = 'tomato' : tintColor = 'gray'} />
+                
+            ),
+        },
+    },
+    Profile: {
+        screen: Home,
+        navigationOptions: {
+            tabBarLabel: ' ',
+            tabBarIcon: ({focused, tintColor}) => (
+                <Ionicons name='md-person' size={32} color={focused ? tintColor = 'tomato' : tintColor = 'gray'} />
+                
+            ),
+        },
+    },
 });
 
 export default createAppContainer(TabNavigator);

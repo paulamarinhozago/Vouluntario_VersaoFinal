@@ -13,7 +13,7 @@ const TabNavigator = createBottomTabNavigator({
         screen: Home,
         navigationOptions: {
             tabBarLabel: ' ',
-            tabBarIcon: ({focused, horizontal, tintColor}) => (
+            tabBarIcon: ({focused, tintColor}) => (
                 <Ionicons name='md-calendar' size={32} color={focused ? tintColor = 'tomato' : tintColor = 'gray'} />
                 
             ),

@@ -31,7 +31,7 @@ class Signup extends React.Component {
         <Text>{'\n'}</Text>
         <TouchableOpacity>
           <Image>
-
+            source={require('../assets/animals.png')}
           </Image>
         </TouchableOpacity>
 

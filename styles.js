@@ -18,6 +18,11 @@ export default styles = StyleSheet.create({
       width: 200
     },
 
+    image: {
+      height: 55,
+      width: 55
+    },
+
     border: {
       width: '85%',
       margin:10,

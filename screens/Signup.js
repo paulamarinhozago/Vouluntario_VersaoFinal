@@ -30,9 +30,10 @@ class Signup extends React.Component {
         />
         <Text>{'\n'}</Text>
         <TouchableOpacity>
-          <Image>
+          <Image
             source={require('../assets/animals.png')}
-          </Image>
+            style={styles.image}
+          />
         </TouchableOpacity>
 
 

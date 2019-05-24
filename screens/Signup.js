@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, Button, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { updateEmail, updatePassword, updateUsername } from '../actions/user'
@@ -28,6 +28,14 @@ class Signup extends React.Component {
             onChangeText={input => this.props.updateUsername(input)}
             placeholder = 'Username'
         />
+        <Text>{'\n'}</Text>
+        <TouchableOpacity>
+          <Image>
+
+          </Image>
+        </TouchableOpacity>
+
+
         <TouchableOpacity style={styles.button} onPress={() => console.log(this.props.user)} >
             <Text>Signup</Text>
         </TouchableOpacity>

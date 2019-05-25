@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'coral',
+      backgroundColor: 'lightsalmon',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -12,7 +12,7 @@ export default styles = StyleSheet.create({
       marginTop:20,
       paddingVertical: 10,
       alignItems: 'center',
-      backgroundColor: 'lightsalmon',
+      backgroundColor: 'mistyrose',
       borderColor: 'gray',
       borderWidth: 1,
       borderRadius: 5,
@@ -36,9 +36,10 @@ export default styles = StyleSheet.create({
 
     inputBox: {
       width:300,
-      backgroundColor: 'lightsalmon',
+      backgroundColor: 'mistyrose',
       borderRadius:25,
       paddingHorizontal:16,
+      paddingVertical:10,
       fontSize:16,
       color: 'dimgray',
       marginVertical:10

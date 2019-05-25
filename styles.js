@@ -12,7 +12,7 @@ export default styles = StyleSheet.create({
       marginTop:20,
       paddingVertical: 10,
       alignItems: 'center',
-      backgroundColor: 'lemonchiffon',
+      backgroundColor: 'lightsalmon',
       borderColor: 'gray',
       borderWidth: 1,
       borderRadius: 5,
@@ -36,9 +36,11 @@ export default styles = StyleSheet.create({
 
     inputBox: {
       width:300,
-      height:20,
       backgroundColor: 'lightsalmon',
       borderRadius:25,
-      paddingHorizontal: 40
+      paddingHorizontal:16,
+      fontSize:16,
+      color: 'dimgray',
+      marginVertical:10
     }
 });

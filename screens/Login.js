@@ -18,13 +18,13 @@ class Login extends React.Component {
     return (
       <View style={styles.container}>
         <TextInput
-            style={styles.border}
+            style={styles.inputBox}
             value={this.props.user.email}
             onChangeText={input => this.props.updateEmail(input)}
             placeholder = 'E-mail'
         />
         <TextInput
-            style={styles.border}
+            style={styles.inputBox}
             value={this.props.user.password}
             onChangeText={input => this.props.updatePassword(input)}
             placeholder = 'Senha'

@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: 'coral',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -33,4 +33,12 @@ export default styles = StyleSheet.create({
       borderBottomWidth: 1,
       textAlign: 'center'
     },
+
+    inputBox: {
+      width:300,
+      height:20,
+      backgroundColor: 'lightsalmon',
+      borderRadius:25,
+      paddingHorizontal: 40
+    }
 });

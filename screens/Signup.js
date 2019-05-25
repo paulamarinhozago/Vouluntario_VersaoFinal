@@ -19,70 +19,69 @@ class Signup extends React.Component {
             style={styles.border}
             value={this.props.user.password}
             onChangeText={input => this.props.updatePassword(input)}
-            placeholder = 'Password'
+            placeholder = 'Senha'
             secureTextEntry={true}
         />
         <TextInput
             style={styles.border}
             value={this.props.user.username}
             onChangeText={input => this.props.updateUsername(input)}
-            placeholder = 'Username'
+            placeholder = 'Nome de usuário'
         />
         <Text>{'\n'}</Text>
-
+        
         <View style={{flexDirection: "row"}}>
-        <TouchableOpacity>
-          <Image
-            source={require('../assets/animals.png')}
-            style={styles.image}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            source={require('../assets/child.png')}
-            style={styles.image}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            source={require('../assets/church.png')}
-            style={styles.image}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            source={require('../assets/desease.png')}
-            style={styles.image}
-          />
-        </TouchableOpacity>
+          <TouchableOpacity title='Animais'>
+            <Image
+              source={require('../assets/animals.png')}
+              style={styles.image}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/child.png')}
+              style={styles.image}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/church.png')}
+              style={styles.image}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/desease.png')}
+              style={styles.image}
+            />
+          </TouchableOpacity>
         </View>
-
+        <Text>{'\n'}</Text>
         <View style={{flexDirection: "row"}}>
-    
-        <TouchableOpacity>
-          <Image
-            source={require('../assets/education.png')}
-            style={styles.image}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            source={require('../assets/environment.png')}
-            style={styles.image}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            source={require('../assets/homeless.png')}
-            style={styles.image}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            source={require('../assets/old.png')}
-            style={styles.image}
-          />
-        </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/education.png')}
+              style={styles.image}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/environment.png')}
+              style={styles.image}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/homeless.png')}
+              style={styles.image}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/old.png')}
+              style={styles.image}
+            />
+          </TouchableOpacity>
         </View>
 
         <TouchableOpacity style={styles.button} onPress={() => console.log(this.props.user)} >

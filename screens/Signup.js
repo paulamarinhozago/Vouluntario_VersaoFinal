@@ -28,6 +28,7 @@ class Signup extends React.Component {
             onChangeText={input => this.props.updateUsername(input)}
             placeholder = 'Username'
         />
+
         <Text>{'\n'}</Text>
         <TouchableOpacity>
           <Image
@@ -35,7 +36,48 @@ class Signup extends React.Component {
             style={styles.image}
           />
         </TouchableOpacity>
-
+        <TouchableOpacity>
+          <Image
+            source={require('../assets/child.png')}
+            style={styles.image}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            source={require('../assets/church.png')}
+            style={styles.image}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            source={require('../assets/desease.png')}
+            style={styles.image}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            source={require('../assets/education.png')}
+            style={styles.image}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            source={require('../assets/environment.png')}
+            style={styles.image}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            source={require('../assets/homeless.png')}
+            style={styles.image}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            source={require('../assets/old.png')}
+            style={styles.image}
+          />
+        </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={() => console.log(this.props.user)} >
             <Text>Signup</Text>

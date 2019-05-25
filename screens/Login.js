@@ -27,15 +27,15 @@ class Login extends React.Component {
             style={styles.border}
             value={this.props.user.password}
             onChangeText={input => this.props.updatePassword(input)}
-            placeholder = 'Password'
+            placeholder = 'Senha'
             secureTextEntry={true}
         />
         <TouchableOpacity style={styles.button} onPress={() => this.login()} >
-            <Text>Login</Text>
+            <Text>Entrar</Text>
         </TouchableOpacity>
         <Text>{'\n'}</Text>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Signup')} >
-            <Text style={{color: 'blue'}}>Signup</Text>
+            <Text style={{color: 'blue'}}>{'Cadastrar'}</Text>
         </TouchableOpacity>
       </View>
     );

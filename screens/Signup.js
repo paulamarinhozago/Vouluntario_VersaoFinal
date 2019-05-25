@@ -28,8 +28,9 @@ class Signup extends React.Component {
             onChangeText={input => this.props.updateUsername(input)}
             placeholder = 'Username'
         />
-
         <Text>{'\n'}</Text>
+
+        <View style={{flexDirection: "row"}}>
         <TouchableOpacity>
           <Image
             source={require('../assets/animals.png')}
@@ -54,6 +55,10 @@ class Signup extends React.Component {
             style={styles.image}
           />
         </TouchableOpacity>
+        </View>
+
+        <View style={{flexDirection: "row"}}>
+    
         <TouchableOpacity>
           <Image
             source={require('../assets/education.png')}
@@ -78,6 +83,7 @@ class Signup extends React.Component {
             style={styles.image}
           />
         </TouchableOpacity>
+        </View>
 
         <TouchableOpacity style={styles.button} onPress={() => console.log(this.props.user)} >
             <Text>Signup</Text>

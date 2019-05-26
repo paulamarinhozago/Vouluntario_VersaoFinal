@@ -18,6 +18,12 @@ class Login extends React.Component {
     return (
       <ImageBackground source={require('../assets/background.jpg')} style={{width: '100%', height: '100%'}}>
       <View style={styles.container}>
+        <Image
+          source={require('../assets/logo.png')}
+        /> 
+        <Text style={{color:'white', fontSize:10}}>{'VOULUNTÁRIO'}</Text>
+        <Text>{'\n'}</Text>
+        <Text>{'\n'}</Text>
         <TextInput
             style={styles.inputBox}
             value={this.props.user.email}
@@ -32,14 +38,14 @@ class Login extends React.Component {
             secureTextEntry={true}
         />
         <TouchableOpacity style={styles.button} onPress={() => this.login()} >
-            <Text style={{color: 'white'}}>Entrar</Text>
+            <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Entrar</Text>
         </TouchableOpacity>
         <Text>{'\n'}</Text>
         <Text>{'\n'}</Text>
         <Text>{'\n'}</Text>
         <Text style={{color: 'white'}}>{'Ainda não tem uma conta?'}</Text>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Signup')} >
-            <Text style={{color: 'blue'}}>{'Cadastre-se aqui'}</Text>
+            <Text style={{color:'white', fontSize:18, fontWeight:'bold'}} >{'Cadastre-se aqui'}</Text>
         </TouchableOpacity>
         <Image 
           source={require('../assets/maos.png')}

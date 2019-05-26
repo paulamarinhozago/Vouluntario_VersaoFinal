@@ -8,6 +8,7 @@ import styles from '../styles'
 class Signup extends React.Component {
   render() {
     return (
+    <ImageBackground source={require('../assets/background.jpg')} style={{width: '100%', height: '100%'}}>
     <View style={styles.container}>
       <Text>{'Como você gostaria de se cadastrar?'}</Text>
       <TouchableOpacity style={styles.button} onPress={() => console.log(this.props.user)} >
@@ -19,6 +20,7 @@ class Signup extends React.Component {
       <TouchableOpacity style={styles.button} onPress={() => console.log(this.props.user)} >
           <Text>Empresa</Text>
       </TouchableOpacity>
+      
 
     </View>
     );

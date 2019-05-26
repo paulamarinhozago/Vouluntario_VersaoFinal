@@ -45,7 +45,7 @@ export default styles = StyleSheet.create({
 
     bottomView:{
       width: '100%', 
-      height: 50, 
+      height: 120, 
       justifyContent: 'center', 
       alignItems: 'center',
       position: 'absolute',

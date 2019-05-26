@@ -44,7 +44,7 @@ class Login extends React.Component {
         <Text>{'\n'}</Text>
         <Text>{'\n'}</Text>
         <Text style={{color: 'white'}}>{'Ainda não tem uma conta?'}</Text>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Signup_2')} >
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Signup')} >
             <Text style={{color:'white', fontSize:18, fontWeight:'bold'}} >{'Cadastre-se aqui'}</Text>
         </TouchableOpacity>
         <Image 

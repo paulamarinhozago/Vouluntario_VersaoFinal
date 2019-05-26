@@ -97,7 +97,7 @@ class Signup_2 extends React.Component {
             </View>
             <Text>{'\n'}</Text>
 
-            <TouchableOpacity style={styles.button} onPress={() => console.log(this.props.user)} >
+            <TouchableOpacity style={styles.button_1} onPress={() => console.log(this.props.user)} >
                 <Text>Signup</Text>
             </TouchableOpacity>
 

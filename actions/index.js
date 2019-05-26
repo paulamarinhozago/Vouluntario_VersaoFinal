@@ -1,7 +1,34 @@
-export const add = () => {
-    return {type: 'ADD'}
+import { combineReducers } from 'redux'
+
+const counter = (state = 115, action) => {
+    switch (action, type) {
+        case 'ADD':
+            return state + 1
+        case 'SUBTRACT':
+            return state - 1
+        default:
+            return state
+    }
 }
 
-export const subtract = () => {
-    return {type: 'SUBTRACT'}
+const user = (state = {}, action) => {
+    switch (action.type) {
+        case 'UPDATE_EMAIL':
+            return{...state, email: action.payload}
+        case 'UPDATE_PASSWORD':
+            return{...state, password: action.payload}
+        case 'UPDATE_USERNAME':
+            return{...state, username: action.payload}
+        case 'UPDATE_TYPE':
+            return{...state, type: action.payload}
+        default:
+            return state
+    }
 }
+
+const rootReducer = combineReducers({
+    counter,
+    user
+})
+
+export default rootReducer

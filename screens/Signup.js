@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, TextInput, Button, TouchableOpacity, Image, ImageBackground, Picker } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { updateEmail, updatePassword, updateUsername } from '../actions/user'
+import { updateEmail, updatePassword, updateUsername, updateType } from '../actions/user'
 import styles from '../styles'
 
 class Signup extends React.Component {
@@ -11,13 +11,13 @@ class Signup extends React.Component {
     <ImageBackground source={require('../assets/background.jpg')} style={{width: '100%', height: '100%'}}>
     <View style={styles.container}>
       <Text  style={{color: 'white'}}>{'Como você gostaria de se cadastrar?'}</Text>
-      <TouchableOpacity style={styles.button_2} onPress={() => console.log(this.props.user)} >
+      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(1)} >
           <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Pessoa</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button_2} onPress={() => console.log(this.props.user)} >
+      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(2)} >
           <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>ONG</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button_2} onPress={() => console.log(this.props.user)} >
+      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(3)} >
           <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Empresa</Text>
       </TouchableOpacity>
     </View>
@@ -27,7 +27,7 @@ class Signup extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({updateEmail, updatePassword, updateUsername}, dispatch)
+    return bindActionCreators({updateEmail, updatePassword, updateUsername, updateType}, dispatch)
 }
   
 const mapStateToProps = (state) => {

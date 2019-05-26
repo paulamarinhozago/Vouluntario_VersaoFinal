@@ -10,5 +10,8 @@ export const updateUsername = (username) => {
     return {type: 'UPDATE_USERNAME', payload: username}
 }
 
+export const updateType = (type) => {
+    return {type: 'UPDATE_TYPE', payload: type}
+}
 
 

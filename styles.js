@@ -43,8 +43,12 @@ export default styles = StyleSheet.create({
       marginVertical:10
     },
 
-    backgroundImage: {
-      flex: 1,
-      resizeMode: 'cover', 
+    bottomView:{
+      width: '100%', 
+      height: 50, 
+      justifyContent: 'center', 
+      alignItems: 'center',
+      position: 'absolute',
+      bottom: 0
     },
 });

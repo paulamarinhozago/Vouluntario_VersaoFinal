@@ -41,6 +41,10 @@ class Login extends React.Component {
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Signup')} >
             <Text style={{color: 'blue'}}>{'Cadastre-se aqui'}</Text>
         </TouchableOpacity>
+        <Image 
+          source={require('../assets/maos.png')}
+          style={styles.bottomView}
+        /> 
       </View>
       </ImageBackground>
     );

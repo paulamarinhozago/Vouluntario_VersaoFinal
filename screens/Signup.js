@@ -20,9 +20,8 @@ class Signup extends React.Component {
       <TouchableOpacity style={styles.button} onPress={() => console.log(this.props.user)} >
           <Text>Empresa</Text>
       </TouchableOpacity>
-      
-
     </View>
+    </ImageBackground>
     );
   }
 }

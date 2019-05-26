@@ -5,9 +5,11 @@ export default styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
+      fontSize:16,
+      color:'white'
     },
 
-    button: {
+    button_1: {
       marginTop:20,
       paddingVertical: 10,
       alignItems: 'center',
@@ -15,6 +17,15 @@ export default styles = StyleSheet.create({
       borderRadius: 25,
       width:200,
       fontWeight: 'bold',
+    },
+
+    button_2: {
+      marginTop:20,
+      paddingVertical: 10,
+      alignItems: 'center',
+      backgroundColor: 'mediumorchid',
+      borderRadius: 25,
+      width:200,
     },
 
     image: {

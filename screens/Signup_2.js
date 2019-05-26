@@ -31,27 +31,33 @@ class Signup_Person extends React.Component {
             <Text>{'\n'}</Text>
         
           <View style={{flexDirection: "row"}}>
-            <TouchableOpacity title='Animais'>
+            <TouchableOpacity>
               <Image
-                source={require('../assets/animals.png')}
+                source={require('../assets/animais.png')}
                 style={styles.image}
               />
             </TouchableOpacity>
             <TouchableOpacity>
               <Image
-                source={require('../assets/child.png')}
+                source={require('../assets/meioambiente.png')}
                 style={styles.image}
               />
             </TouchableOpacity>
             <TouchableOpacity>
               <Image
-                source={require('../assets/church.png')}
+                source={require('../assets/cancer.png')}
                 style={styles.image}
               />
             </TouchableOpacity>
             <TouchableOpacity>
               <Image
-                source={require('../assets/desease.png')}
+                source={require('../assets/criancas.png')}
+                style={styles.image}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image
+                source={require('../assets/idosos.png')}
                 style={styles.image}
               />
             </TouchableOpacity>
@@ -60,25 +66,31 @@ class Signup_Person extends React.Component {
           <View style={{flexDirection: "row"}}>
             <TouchableOpacity>
                 <Image
-                  source={require('../assets/education.png')}
+                  source={require('../assets/igreja.png')}
                   style={styles.image}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
                 <Image
-                  source={require('../assets/environment.png')}
+                  source={require('../assets/lgbt.png')}
                   style={styles.image}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
                 <Image
-                  source={require('../assets/homeless.png')}
+                  source={require('../assets/mulheres.png')}
                   style={styles.image}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
                 <Image
-                  source={require('../assets/old.png')}
+                  source={require('../assets/pedinte.png')}
+                  style={styles.image}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image
+                  source={require('../assets/deficiencia.png')}
                   style={styles.image}
                 />
               </TouchableOpacity>

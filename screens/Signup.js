@@ -10,15 +10,15 @@ class Signup extends React.Component {
     return (
     <ImageBackground source={require('../assets/background.jpg')} style={{width: '100%', height: '100%'}}>
     <View style={styles.container}>
-      <Text>{'Como você gostaria de se cadastrar?'}</Text>
-      <TouchableOpacity style={styles.button} onPress={() => console.log(this.props.user)} >
-          <Text>Pessoa</Text>
+      <Text  style={{color: 'white'}}>{'Como você gostaria de se cadastrar?'}</Text>
+      <TouchableOpacity style={styles.button_2} onPress={() => console.log(this.props.user)} >
+          <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Pessoa</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => console.log(this.props.user)} >
-          <Text>ONG</Text>
+      <TouchableOpacity style={styles.button_2} onPress={() => console.log(this.props.user)} >
+          <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>ONG</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => console.log(this.props.user)} >
-          <Text>Empresa</Text>
+      <TouchableOpacity style={styles.button_2} onPress={() => console.log(this.props.user)} >
+          <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Empresa</Text>
       </TouchableOpacity>
     </View>
     </ImageBackground>

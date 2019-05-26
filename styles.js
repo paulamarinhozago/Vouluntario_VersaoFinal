@@ -5,8 +5,6 @@ export default styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      fontSize:16,
-      color:'white'
     },
 
     button_1: {

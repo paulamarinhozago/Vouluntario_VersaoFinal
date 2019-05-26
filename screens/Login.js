@@ -37,7 +37,7 @@ class Login extends React.Component {
             placeholder = 'Senha'
             secureTextEntry={true}
         />
-        <TouchableOpacity style={styles.button} onPress={() => this.login()} >
+        <TouchableOpacity style={styles.button_1} onPress={() => this.login()} >
             <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Entrar</Text>
         </TouchableOpacity>
         <Text>{'\n'}</Text>

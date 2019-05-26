@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { updateEmail, updatePassword, updateUsername } from '../actions/user'
 import styles from '../styles'
 
-class Signup_Person extends React.Component {
+class Signup_2 extends React.Component {
   render() {
     return (
         <View style={styles.container}>

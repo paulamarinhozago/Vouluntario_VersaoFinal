@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import logger from 'redux-logger';
 import SwitchNavigator from './navigation/SwitchNavigator';
+import Signup_2 from './screens/Signup_2'
 const middleware = applyMiddleware(thunkMiddleware, logger);
 const store = createStore(reducer, middleware);
 // console.disableYellowBox = true;

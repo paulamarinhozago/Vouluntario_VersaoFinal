@@ -3,6 +3,7 @@ import { Text, View, TextInput, TouchableOpacity, Image, ImageBackground } from 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { updateEmail, updatePassword } from '../actions/user'
+import firebase from 'firebase'
 import styles from '../styles'
 
 class Login extends React.Component {
@@ -10,8 +11,11 @@ class Login extends React.Component {
   //verificar no banco de dados
   login = () => {
     //if(this.props.user.email) {
-        this.props.navigation.navigate('Home')
+        //this.props.navigation.navigate('Home')
     //}
+    firebase.auth().createUserWithEmailAndPassword(this.props.user.email, this.props.user.password).catch(function(error) {
+      alert(error)
+    });
   }
 
   render() {

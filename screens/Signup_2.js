@@ -34,7 +34,7 @@ class Signup_2 extends React.Component {
           <View style={{flexDirection: "row"}}>
             <TouchableOpacity>
               <Image
-                source={require('../assets/animais.png')}
+                source={require('../assets/criancas.png')}
                 style={styles.image}
               />
             </TouchableOpacity>
@@ -52,7 +52,7 @@ class Signup_2 extends React.Component {
             </TouchableOpacity>
             <TouchableOpacity>
               <Image
-                source={require('../assets/criancas.png')}
+                source={require('../assets/animais.png')}
                 style={styles.image}
               />
             </TouchableOpacity>

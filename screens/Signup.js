@@ -11,13 +11,13 @@ class Signup extends React.Component {
     <ImageBackground source={require('../assets/background.jpg')} style={{width: '100%', height: '100%'}}>
     <View style={styles.container}>
       <Text  style={{color: 'white'}}>{'Como você gostaria de se cadastrar?'}</Text>
-      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(1) && console.log(this.props.user.type)} >
+      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(1) && this.props.navigation.navigate('Signup_2')} >
           <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Pessoa</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(2) && console.log(this.props.user.type)} >
+      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(2)} >
           <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>ONG</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(3) && console.log(this.props.user.type)} >
+      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(3)} >
           <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Empresa</Text>
       </TouchableOpacity>
     </View>

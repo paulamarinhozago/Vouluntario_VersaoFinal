@@ -32,11 +32,14 @@ class Login extends React.Component {
             secureTextEntry={true}
         />
         <TouchableOpacity style={styles.button} onPress={() => this.login()} >
-            <Text color='white'>Entrar</Text>
+            <Text style={{color: 'white'}}>Entrar</Text>
         </TouchableOpacity>
         <Text>{'\n'}</Text>
+        <Text>{'\n'}</Text>
+        <Text>{'\n'}</Text>
+        <Text style={{color: 'white'}}>{'Ainda não tem uma conta?'}</Text>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Signup')} >
-            <Text style={{color: 'blue'}}>{'Cadastrar'}</Text>
+            <Text style={{color: 'blue'}}>{'Cadastre-se aqui'}</Text>
         </TouchableOpacity>
       </View>
       </ImageBackground>

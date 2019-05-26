@@ -12,9 +12,9 @@ export default styles = StyleSheet.create({
       paddingVertical: 10,
       alignItems: 'center',
       backgroundColor: 'fuchsia',
-      borderWidth: 1,
       borderRadius: 25,
-      width:200
+      width:200,
+      fontWeight: 'bold',
     },
 
     image: {
@@ -34,7 +34,7 @@ export default styles = StyleSheet.create({
 
     inputBox: {
       width:300,
-      backgroundColor: 'mediumpurple',
+      backgroundColor: 'mediumorchid',
       borderRadius:25,
       paddingHorizontal:16,
       paddingVertical:10,

@@ -14,10 +14,10 @@ class Signup extends React.Component {
       <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(1) && this.props.navigation.navigate('Signup_2')} >
           <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Pessoa</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(2)} >
+      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(2) && this.props.navigation.navigate('Signup_2')} >
           <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>ONG</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(3)} >
+      <TouchableOpacity style={styles.button_2} onPress={() => this.props.updateType(3) && this.props.navigation.navigate('Signup_2')} >
           <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Empresa</Text>
       </TouchableOpacity>
     </View>

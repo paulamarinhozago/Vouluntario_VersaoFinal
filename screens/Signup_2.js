@@ -8,22 +8,23 @@ import styles from '../styles'
 class Signup_2 extends React.Component {
   render() {
     return (
+      <ImageBackground source={require('../assets/background.jpg')} style={{width: '100%', height: '100%'}}>
         <View style={styles.container}>
             <TextInput
-                style={styles.border}
+                style={styles.inputBox}
                 value={this.props.user.email}
                 onChangeText={input => this.props.updateEmail(input)}
                 placeholder = 'E-mail'
             />
             <TextInput
-                style={styles.border}
+                style={styles.inputBox}
                 value={this.props.user.password}
                 onChangeText={input => this.props.updatePassword(input)}
                 placeholder = 'Senha'
                 secureTextEntry={true}
             />
             <TextInput
-                style={styles.border}
+                style={styles.inputBox}
                 value={this.props.user.username}
                 onChangeText={input => this.props.updateUsername(input)}
                 placeholder = 'Nome de usuário'
@@ -98,10 +99,10 @@ class Signup_2 extends React.Component {
             <Text>{'\n'}</Text>
 
             <TouchableOpacity style={styles.button_1} onPress={() => console.log(this.props.user)} >
-                <Text>Signup</Text>
+                <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Signup</Text>
             </TouchableOpacity>
-
         </View>
+      </ImageBackground>
 
     );
   }

@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from 'react-native';
 export default styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'lightsalmon',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -35,12 +34,17 @@ export default styles = StyleSheet.create({
 
     inputBox: {
       width:300,
-      backgroundColor: 'mistyrose',
+      backgroundColor: 'mediumpurple',
       borderRadius:25,
       paddingHorizontal:16,
       paddingVertical:10,
       fontSize:16,
-      color: 'dimgray',
+      color: 'white',
       marginVertical:10
-    }
+    },
+
+    backgroundImage: {
+      flex: 1,
+      resizeMode: 'cover', 
+    },
 });

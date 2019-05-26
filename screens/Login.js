@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { updateEmail, updatePassword } from '../actions/user'
@@ -16,6 +16,7 @@ class Login extends React.Component {
 
   render() {
     return (
+      <ImageBackground source={require('../assets/background.jpg')} style={{width: '100%', height: '100%'}}>
       <View style={styles.container}>
         <TextInput
             style={styles.inputBox}
@@ -38,6 +39,7 @@ class Login extends React.Component {
             <Text style={{color: 'blue'}}>{'Cadastrar'}</Text>
         </TouchableOpacity>
       </View>
+      </ImageBackground>
     );
   }
 }

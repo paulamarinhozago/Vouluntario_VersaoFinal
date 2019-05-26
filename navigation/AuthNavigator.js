@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, Button, Image } from 'react-native';
 import Login from '../screens/Login';
-import SignupScreen from '../screens/Signup_2';
+import SignupScreen from '../screens/Signup';
 import { createStackNavigator, createAppContainer, getActiveChildNavigationOptions } from 'react-navigation';
 
 const StackNavigator = createStackNavigator({

@@ -12,11 +12,10 @@ export default styles = StyleSheet.create({
       marginTop:20,
       paddingVertical: 10,
       alignItems: 'center',
-      backgroundColor: 'mistyrose',
-      borderColor: 'gray',
+      backgroundColor: 'fuchsia',
       borderWidth: 1,
-      borderRadius: 5,
-      width: 200
+      borderRadius: 25,
+      width:200
     },
 
     image: {

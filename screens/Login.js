@@ -31,7 +31,7 @@ class Login extends React.Component {
             secureTextEntry={true}
         />
         <TouchableOpacity style={styles.button} onPress={() => this.login()} >
-            <Text>Entrar</Text>
+            <Text color='white'>Entrar</Text>
         </TouchableOpacity>
         <Text>{'\n'}</Text>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Signup')} >

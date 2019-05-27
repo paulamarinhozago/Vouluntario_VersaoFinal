@@ -23,7 +23,18 @@ export const login = (email, password) => {
         try {
             const { email, password } = getState().user
             const response = await firebase.auth().signInWithEmailAndPassword(email, password)
-            dispatch({type: 'LOGIN', payload: response.user})
+            dispatch(getUser(response.user.uid))
+         } catch (e) {
+            alert(e)
+        }
+    }
+}
+
+export const getUser = (uid) => {
+    return async (dispatch, getState) => {
+        try {
+            const user = await db.collection('users').doc(uid).get()
+            dispatch({type: 'LOGIN', payload: user.data()})
         } catch (e) {
             alert(e)
         }
@@ -35,7 +46,6 @@ export const signup = () => {
         try {
             const { email, password, username } = getState().user
             const response = await firebase.auth().createUserWithEmailAndPassword(email, password)
-            dispatch({type: 'SIGNUP', payload: response.user})
             if (response.user.uid) {
                 const user = {
                     uid: response.user.uid,
@@ -45,7 +55,7 @@ export const signup = () => {
                     token: null
                 }
                 db.collection('users').doc(response.user.uid).set(user)
-                dispatch({type: 'SIGNUP', payload: user})
+                dispatch({type: 'LOGIN', payload: user})
             }
         } catch (e) {
             alert(e)

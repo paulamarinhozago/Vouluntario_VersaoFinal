@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, TextInput, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { updateEmail, updatePassword, login } from '../actions/user'
+import { updateEmail, updatePassword, login,  getUser } from '../actions/user'
 import firebase from 'firebase'
 import styles from '../styles'
 
@@ -11,8 +11,10 @@ class Login extends React.Component {
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if(user){
-        console.log(user)
-        this.props.navigation.navigate('Home')
+        this.props.getUser(user.uid)
+        if(this.props.user.uid) {
+          this.props.navigation.navigate('Home')
+        }
       }
     })
   }
@@ -61,7 +63,7 @@ class Login extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({updateEmail, updatePassword, login}, dispatch)
+    return bindActionCreators({updateEmail, updatePassword, login, getUser}, dispatch)
 }
   
 const mapStateToProps = (state) => {

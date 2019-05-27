@@ -34,7 +34,7 @@ export const getUser = (uid) => {
     return async (dispatch, getState) => {
         try {
             const user = await db.collection('users').doc(uid).get()
-            dispatch({type: 'LOGIN', payload: user.data()})
+            dispatch({type: 'LOGIN', payload: user})
         } catch (e) {
             alert(e)
         }

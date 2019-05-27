@@ -30,7 +30,7 @@ export const login = (email, password) => {
     }
 }
 
-export const signup = () => {
+export const signup = (type) => {
     return async (dispatch, getState) => {
         try {
             const { email, password, username } = getState().user
@@ -42,7 +42,8 @@ export const signup = () => {
                     email: email,
                     username: username,
                     photo: '',
-                    token: null
+                    token: null,
+                    type: type
                 }
                 db.collection('users').doc(response.user.uid).set(user)
                 dispatch({type: 'SIGNUP', payload: user})

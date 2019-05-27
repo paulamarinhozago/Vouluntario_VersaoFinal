@@ -7,7 +7,7 @@ import thunkMiddleware from 'redux-thunk';
 import logger from 'redux-logger';
 import firebase from './config/firebase'
 import SwitchNavigator from './navigation/SwitchNavigator';
-const middleware = applyMiddleware(thunkMiddleware);
+const middleware = applyMiddleware(thunkMiddleware, logger);
 const store = createStore(reducer, middleware);
 // console.disableYellowBox = true;
 

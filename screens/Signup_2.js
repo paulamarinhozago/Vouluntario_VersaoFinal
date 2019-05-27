@@ -105,7 +105,7 @@ class Signup_2 extends React.Component {
             <Text>{'\n'}</Text>
 
             <TouchableOpacity style={styles.button_1} onPress={() => this.signup()} >
-                <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Signup</Text>
+                <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Cadastrar</Text>
             </TouchableOpacity>
         </View>
       </ImageBackground>

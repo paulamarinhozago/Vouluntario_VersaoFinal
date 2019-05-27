@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+require('firebase/firestore')
 
 export const updateEmail = (email) => {
     return {type: 'UPDATE_EMAIL', payload: email}
@@ -32,9 +33,13 @@ export const login = (email, password) => {
 export const signup = (email, password) => {
     return async (dispatch, getState) => {
         try {
-            const { email, password } = getState().user
+            const { email, password, username, type } = getState().user
             const response = await firebase.auth().createUserWithEmailAndPassword(email, password)
             dispatch({type: 'SIGNUP', payload: response.user})
+            const user = {
+
+            }
+            firebase.firestore().collection('user').doc(response.user.uid).set(user)
         } catch (e) {
             alert(e)
         }

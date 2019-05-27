@@ -15,7 +15,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
-                <Ionicons name='md-calendar' size={32} color={focused ? tintColor = 'tomato' : tintColor = 'gray'} />
+                <Ionicons name='md-calendar' size={32} color={focused ? tintColor = 'mediumorchid' : tintColor = 'gray'} />
                 
             ),
         },
@@ -25,7 +25,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
-                <Ionicons name='md-search' size={32} color={focused ? tintColor = 'tomato' : tintColor = 'gray'} />
+                <Ionicons name='md-search' size={32} color={focused ? tintColor = 'mediumorchid' : tintColor = 'gray'} />
                 
             ),
         },
@@ -35,7 +35,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
-                <Ionicons name='md-add-circle-outline' size={32} color={focused ? tintColor = 'tomato' : tintColor = 'gray'} />
+                <Ionicons name='md-add-circle-outline' size={32} color={focused ? tintColor = 'mediumorchid' : tintColor = 'gray'} />
                 
             ),
         },
@@ -45,7 +45,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
-                <Ionicons name='md-heart' size={32} color={focused ? tintColor = 'tomato' : tintColor = 'gray'} />
+                <Ionicons name='md-heart' size={32} color={focused ? tintColor = 'mediumorchid' : tintColor = 'gray'} />
                 
             ),
         },
@@ -55,7 +55,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
-                <Ionicons name='md-person' size={32} color={focused ? tintColor = 'tomato' : tintColor = 'gray'} />
+                <Ionicons name='md-person' size={32} color={focused ? tintColor = 'mediumorchid' : tintColor = 'gray'} />
                 
             ),
         },

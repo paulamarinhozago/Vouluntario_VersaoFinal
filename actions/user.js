@@ -30,7 +30,7 @@ export const login = (email, password) => {
     }
 }
 
-export const signup = (email, password) => {
+export const signup = () => {
     return async (dispatch, getState) => {
         try {
             const { email, password, username, type } = getState().user

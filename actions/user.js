@@ -1,3 +1,4 @@
+import firebase from 'firebase'
 import db from '../config/firebase'
 
 export const updateEmail = (email) => {

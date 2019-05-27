@@ -4,7 +4,7 @@ import { Text, View, Button } from 'react-native';
 import { connect } from 'react-redux'
 import styles from '../styles'
 
-cclass Profile extends React.Component {
+class Profile extends React.Component {
   render() {
     return (
       <View style={styles.container}>

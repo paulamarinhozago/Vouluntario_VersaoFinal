@@ -12,7 +12,7 @@ class Login extends React.Component {
     firebase.auth().onAuthStateChanged((user) => {
       if(user){
         this.props.getUser(user.uid)
-        if(this.props.user.uid) {
+        if(this.props.user) {
           this.props.navigation.navigate('Home')
         }
       }

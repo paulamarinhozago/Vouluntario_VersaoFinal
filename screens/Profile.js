@@ -10,7 +10,7 @@ class Profile extends React.Component {
       <View style={styles.container}>
         <Text>Profile</Text>
         <Text>{this.props.user.email}</Text>
-        <Text>{this.props.user.}</Text>
+        <Text>{this.props.user.username}</Text>
         <Button title='Logout' onPress={() => firebase.auth().signOut()} />
       </View>
     );

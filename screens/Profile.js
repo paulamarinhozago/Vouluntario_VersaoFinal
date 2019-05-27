@@ -8,6 +8,7 @@ class Profile extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <Text>Profile</Text>
         <Text>{this.props.user.email}</Text>
         <Text>{this.props.user.username}</Text>
         <Button title='Logout' onPress={() => firebase.auth().signOut()} />
@@ -18,7 +19,7 @@ class Profile extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.counter
+    user: state.user
   }
 }
 

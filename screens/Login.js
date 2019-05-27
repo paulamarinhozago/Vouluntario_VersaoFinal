@@ -10,6 +10,7 @@ class Login extends React.Component {
   
   login = () => {
     this.props.login()
+    this.props.navigation.navigate('Home')
   }
 
   render() {

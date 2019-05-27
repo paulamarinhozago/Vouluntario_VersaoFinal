@@ -2,10 +2,16 @@ import React from 'react';
 import { Text, View, TextInput, Button, TouchableOpacity, Image, ImageBackground, Picker } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { updateEmail, updatePassword, updateUsername } from '../actions/user'
+import { updateEmail, updatePassword, updateUsername, signup } from '../actions/user'
 import styles from '../styles'
 
 class Signup_2 extends React.Component {
+  
+  signup = () => {
+    this.props.signup()
+    this.props.navigation.navigate('Home')
+  }
+  
   render() {
     return (
       <ImageBackground source={require('../assets/background.jpg')} style={{width: '100%', height: '100%'}}>
@@ -98,7 +104,7 @@ class Signup_2 extends React.Component {
             </View>
             <Text>{'\n'}</Text>
 
-            <TouchableOpacity style={styles.button_1} onPress={() => console.log(this.props.user)} >
+            <TouchableOpacity style={styles.button_1} onPress={() => this.signup()} >
                 <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Signup</Text>
             </TouchableOpacity>
         </View>
@@ -109,7 +115,7 @@ class Signup_2 extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({updateEmail, updatePassword, updateUsername}, dispatch)
+    return bindActionCreators({updateEmail, updatePassword, updateUsername, signup}, dispatch)
 }
   
 const mapStateToProps = (state) => {

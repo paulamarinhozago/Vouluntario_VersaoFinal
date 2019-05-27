@@ -22,21 +22,22 @@ export const login = (email, password) => {
         try {
             const { email, password } = getState().user
             const response = await firebase.auth().signInWithEmailAndPassword(email, password)
-            console.log(response)
-            // firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-            //     alert(error)
-            // });
+            dispatch({type: 'LOGIN', payload: response.user})
         } catch (e) {
             alert(e)
         }
     }
 }
 
-export const signup = () => {
-    return () => {
-        firebase.auth().createUserWithEmailAndPassword(this.props.user.email, this.props.user.password).catch(function(error) {
-            alert(error)
-        });
+export const signup = (email, password) => {
+    return async (dispatch, getState) => {
+        try {
+            const { email, password } = getState().user
+            const response = await firebase.auth().createUserWithEmailAndPassword(email, password)
+            dispatch({type: 'SIGNUP', payload: response.user})
+        } catch (e) {
+            alert(e)
+        }
     }
 }
 

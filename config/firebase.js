@@ -9,9 +9,15 @@ const firebaseConfig = {
     storageBucket: "vouluntario.appspot.com",
     messagingSenderId: "574740672545",
     appId: "1:574740672545:web:4ad263244dfa57b7"
-  };
+};
 
 firebase.initializeApp(firebaseConfig)
+
 const db = firebase.firestore()
+
+db.settings({
+  timestampsInSnapshots: true
+});
+
 export default(db);
 

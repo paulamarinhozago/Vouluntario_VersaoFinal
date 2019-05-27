@@ -8,9 +8,12 @@ import styles from '../styles'
 
 class Login extends React.Component {
   
-  login = () => {
-    this.props.login()
-    this.props.navigation.navigate('Home')
+  componentDidMount = () => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if(user){
+        this.props.navigation.navigate('Home')
+      }
+    })
   }
 
   render() {
@@ -36,7 +39,7 @@ class Login extends React.Component {
             placeholder = 'Senha'
             secureTextEntry={true}
         />
-        <TouchableOpacity style={styles.button_1} onPress={() => this.login()} >
+        <TouchableOpacity style={styles.button_1} onPress={() => this.props.login()} >
             <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Entrar</Text>
         </TouchableOpacity>
         <Text>{'\n'}</Text>

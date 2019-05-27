@@ -33,7 +33,7 @@ export const login = (email, password) => {
 export const signup = () => {
     return async (dispatch, getState) => {
         try {
-            const { email, password, username, type } = getState().user
+            const { email, password, username } = getState().user
             const response = await firebase.auth().createUserWithEmailAndPassword(email, password)
             dispatch({type: 'SIGNUP', payload: response.user})
             if (response.user.uid) {
@@ -41,7 +41,6 @@ export const signup = () => {
                     uid: response.user.uid,
                     email: email,
                     username: username,
-                    type: type,
                     photo: '',
                     token: null
                 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { updateDescription } from '../actions/post'
-import { Text, View, TextInput } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import styles from '../styles'
 
 class Post extends React.Component {
@@ -10,8 +10,9 @@ class Post extends React.Component {
     return (
       <View style={styles.container}>
         <TextInput
-            style={styles.inputBox}
-            value={this.props.post.description}
+            style={styles.inputBox2}
+            multiline = {true}
+            //value={this.props.post.description}
             onChangeText={input => this.props.updateDescription(input)}
             placeholder = 'Descrição'
         />

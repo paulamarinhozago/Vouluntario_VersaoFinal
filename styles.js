@@ -52,6 +52,18 @@ export default styles = StyleSheet.create({
       marginVertical:10
     },
 
+    inputBox2: {
+      width:300,
+      height:300,
+      backgroundColor: 'mediumorchid',
+      borderRadius:25,
+      paddingHorizontal:16,
+      paddingVertical:10,
+      fontSize:16,
+      color: 'white',
+      marginVertical:10,
+    },
+
     bottomView:{
       width: '100%', 
       height: 120, 

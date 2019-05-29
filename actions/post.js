@@ -8,8 +8,7 @@ export const updateDescription = (text) => {
 export const uploadPost = () => {
 	return async (dispatch, getState) => {
 		try {
-			const { post, user } = getState()
- 
+			const { post, user } = getState()   
 			const upload = {
 				postPhoto: 'https://firebasestorage.googleapis.com/v0/b/vouluntario.appspot.com/o/ambiental.jpg?alt=media&token=061cfdf0-3f54-4f8c-99ac-6b6b7508cfea',
 				postDescription: post.description,
@@ -17,11 +16,9 @@ export const uploadPost = () => {
 				photo: user.photo,
 				username: user.username,
 			}
-
 			const ref = await db.collection('posts').doc()
 			upload.id = ref.id
 			ref.set(upload)
-
 		} catch (e) {
 			alert(e)
 		}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { updateDescription } from '../actions'
+import { updateDescription, uploadPost } from '../actions'
 import { Text, View, TextInput, TouchableOpacity, Keyboard, Image } from 'react-native';
 import styles from '../styles'
 
@@ -23,7 +23,7 @@ class Post extends React.Component {
             placeholder = 'Descrição'
         />
         
-        <TouchableOpacity style={styles.button_1} onPress={() => console.log("post")} >
+        <TouchableOpacity style={styles.button_1} onPress={this.props.uploadPost} >
             <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Compartilhar</Text>
         </TouchableOpacity>
       </View>

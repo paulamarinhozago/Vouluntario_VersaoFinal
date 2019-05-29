@@ -1,13 +1,38 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { updateDescription } from '../actions/post'
+import { Text, View, TextInput } from 'react-native';
 import styles from '../styles'
 
-export default class Post extends React.Component {
+class Post extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Post</Text>
+        <TextInput
+            style={styles.inputBox}
+            value={this.props.post.description}
+            onChangeText={input => this.props.updateDescription(input)}
+            placeholder = 'Descrição'
+        />
+        <Text>{'\n'}</Text>
+        <TouchableOpacity style={styles.button_1} onPress={() => console.log("post")} >
+            <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Compartilhar</Text>
+        </TouchableOpacity>
       </View>
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ updateDescription }, dispatch)
+}
+
+const mapStateToProps = (state) => {
+  return {
+    post: state.post,
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (Post)

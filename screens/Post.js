@@ -16,8 +16,8 @@ class Post extends React.Component {
             multiline = {true}
             returnKeyType = 'done'
             onSubmitEditing = {Keyboard.dismiss}
-            onChangeText={text => this.props.updateDescription(text)}
-            value={this.props.post.postDescription}
+            //onChangeText={text => this.props.updateDescription(text)}
+            //value={this.props.post.postDescription}
             placeholder = 'Descrição'
         />
         

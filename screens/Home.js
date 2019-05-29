@@ -12,16 +12,16 @@ class Home extends React.Component {
   render() {
     if (this.props.post === null) return null
     return (
-      <View style={styles.container}>
-        <Image style={styles.postPhoto } source={{uri: this.props.post.feed[0].postPhoto}} />
-        <Text>{this.props.post.feed[0].postDescription}</Text>
-      </View>
+      // <View style={styles.container}>
+      //   <Image style={styles.postPhoto } source={{uri: this.props.post.feed[0].postPhoto}} />
+      //   <Text>{this.props.post.feed[0].postDescription}</Text>
+      // </View>
     );
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({getPosts}, dispatch)
+  return bindActionCreators({ getPosts }, dispatch)
 }
 
 const mapStateToProps = (state) => {

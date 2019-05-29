@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, Image } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { getPosts } from '../actions/post'
@@ -10,9 +10,11 @@ class Home extends React.Component {
     this.props.getPosts()
   }
   render() {
+    if (this.props.post === null) return null
     return (
       <View style={styles.container}>
-        <Text>Home {this.props.counter}</Text>
+        <Image style={styles.postPhoto } source={{uri: this.props.post.feed[0].postPhoto}} />
+        <Text>{this.props.post.feed[0].postDescription}</Text>
       </View>
     );
   }

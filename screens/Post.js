@@ -17,7 +17,7 @@ class Post extends React.Component {
             returnKeyType = 'done'
             onSubmitEditing = {Keyboard.dismiss}
             onChangeText={text => this.props.updateDescription(text)}
-            //value={this.props.post.description}
+            value={this.props.post.postDescription}
             placeholder = 'Descrição'
         />
         

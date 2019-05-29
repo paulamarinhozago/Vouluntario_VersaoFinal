@@ -53,14 +53,16 @@ export default styles = StyleSheet.create({
     },
 
     inputBox2: {
-      width:300,
-      height:150,
-      backgroundColor: 'mediumorchid',
-      borderRadius:25,
+      width:350,
+      height:100,
+      //backgroundColor: 'mediumorchid',
+      borderColor: 'gray',
+      borderWidth:1,
+      borderRadius:5,
       paddingHorizontal:16,
       paddingVertical:10,
       fontSize:16,
-      color: 'white',
+      //color: 'white',
       marginVertical:10,
     },
 
@@ -74,11 +76,9 @@ export default styles = StyleSheet.create({
     },
 
     postPhoto: {
-      width: 100,
-      height: 100,
-      borderRadius: 25,
-      
-
+      width: 350,
+      height: 350,
+      borderRadius: 5,
 
     }
 });

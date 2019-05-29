@@ -54,7 +54,7 @@ export default styles = StyleSheet.create({
 
     inputBox2: {
       width:300,
-      height:300,
+      height:150,
       backgroundColor: 'mediumorchid',
       borderRadius:25,
       paddingHorizontal:16,

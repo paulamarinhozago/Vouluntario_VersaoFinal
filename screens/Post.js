@@ -1,8 +1,8 @@
 import React from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { updateDescription } from '../actions/post'
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { updateDescription } from '../actions'
+import { Text, View, TextInput, TouchableOpacity, Keyboard } from 'react-native';
 import styles from '../styles'
 
 class Post extends React.Component {
@@ -12,11 +12,13 @@ class Post extends React.Component {
         <TextInput
             style={styles.inputBox2}
             multiline = {true}
-            //value={this.props.post.description}
-            onChangeText={input => this.props.updateDescription(input)}
+            returnKeyType = 'done'
+            onSubmitEditing = {Keyboard.dismiss}
+            onChangeText={text => this.props.updateDescription(text)}
+            value={this.props.post.text}
             placeholder = 'Descrição'
         />
-        <Text>{'\n'}</Text>
+        
         <TouchableOpacity style={styles.button_1} onPress={() => console.log("post")} >
             <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Compartilhar</Text>
         </TouchableOpacity>

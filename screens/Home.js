@@ -2,10 +2,13 @@ import React from 'react';
 import { Text, View, Button } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { add, subtract } from '../actions'
+import { getPosts } from '../actions/post'
 import styles from '../styles'
 
 class Home extends React.Component {
+  componentDidMount() {
+    this.props.getPosts()
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -16,12 +19,12 @@ class Home extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({add, subtract}, dispatch)
+  return bindActionCreators({getPosts}, dispatch)
 }
 
 const mapStateToProps = (state) => {
   return {
-    counter: state.counter
+    post: state.post
   }
 }
 

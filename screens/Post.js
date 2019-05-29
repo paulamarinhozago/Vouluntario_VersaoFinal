@@ -1,7 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { updateDescription, uploadPost } from '../actions'
+import { updateDescription, uploadPost } from '../actions/post'
 import { Text, View, TextInput, TouchableOpacity, Keyboard, Image } from 'react-native';
 import styles from '../styles'
 
@@ -10,15 +10,13 @@ class Post extends React.Component {
     return (
       <View style={styles.container}>
         <Image style={styles.postPhoto} source={{uri: 'https://firebasestorage.googleapis.com/v0/b/vouluntario.appspot.com/o/ambiental.jpg?alt=media&token=061cfdf0-3f54-4f8c-99ac-6b6b7508cfea'}}
-        
         />
-        
         <TextInput
             style={styles.inputBox2}
             multiline = {true}
             returnKeyType = 'done'
             onSubmitEditing = {Keyboard.dismiss}
-            //onChangeText={text => this.props.updateDescription(text)}
+            onChangeText={text => this.props.updateDescription(text)}
             //value={this.props.post.description}
             placeholder = 'Descrição'
         />
@@ -32,7 +30,7 @@ class Post extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ updateDescription }, dispatch)
+  return bindActionCreators({ updateDescription, uploadPost }, dispatch)
 }
 
 const mapStateToProps = (state) => {

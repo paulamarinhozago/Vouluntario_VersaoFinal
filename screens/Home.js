@@ -15,8 +15,8 @@ class Home extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Home</Text>
-        <Image style={styles.postPhoto } source={{uri: this.props.post.feed[0].postPhoto}} />
-        <Text>{this.props.post.feed[0].postDescription}</Text>
+        <Image style={styles.postPhoto } source={{uri: this.props.post.feed[1].postPhoto}} />
+        <Text>{this.props.post.feed[1].postDescription}</Text>
       </View>
     );
   }

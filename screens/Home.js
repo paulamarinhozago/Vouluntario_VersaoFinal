@@ -9,13 +9,14 @@ class Home extends React.Component {
   componentDidMount() {
     this.props.getPosts()
   }
+  
   render() {
     if (this.props.post === null) return null
     return (
       <View style={styles.container}>
         <Text>Home</Text>
-        {/* <Image style={styles.postPhoto } source={{uri: this.props.post.feed[0].postPhoto}} />
-        <Text>{this.props.post.feed[0].postDescription}</Text> */}
+        <Image style={styles.postPhoto } source={{uri: this.props.post.feed[0].postPhoto}} />
+        <Text>{this.props.post.feed[0].postDescription}</Text>
       </View>
     );
   }

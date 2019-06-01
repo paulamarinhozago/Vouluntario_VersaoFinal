@@ -9,8 +9,7 @@ class Post extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.postPhoto} source={{uri: 'https://firebasestorage.googleapis.com/v0/b/vouluntario.appspot.com/o/ambiental.jpg?alt=media&token=061cfdf0-3f54-4f8c-99ac-6b6b7508cfea'}}
-        />
+        <Image style={styles.postPhoto} source={{uri: 'https://firebasestorage.googleapis.com/v0/b/vouluntario.appspot.com/o/ambiental.jpg?alt=media&token=061cfdf0-3f54-4f8c-99ac-6b6b7508cfea'}}/>
         <TextInput
             style={styles.inputBox2}
             multiline = {true}
@@ -40,4 +39,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (Post)
+export default connect(mapStateToProps, mapDispatchToProps)(Post)

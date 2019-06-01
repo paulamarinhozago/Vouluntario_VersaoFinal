@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux'
 
+// THIS BELOW SECTION I COMMENT IS A REDUCER, YOU SHOULDN'T WRITE THIS IN ACTION
+/*
 const user = (state = {}, action) => {
     switch (action.type) {
         case 'LOGIN':
@@ -16,8 +18,7 @@ const user = (state = {}, action) => {
             return state
     }
 }
-
-const post = (state = null, action) => {
+const post = (state = {}, action) => {
     switch (action.type) {
         case 'UPDATE_DESCRIPTION':
             return{...state, description: action.payload}
@@ -26,11 +27,10 @@ const post = (state = null, action) => {
         default:
             return state
     }
-}
+}*/
 
-const rootReducer = combineReducers({
+/*const rootReducer = combineReducers({
     user, 
     post
 })
-
-export default rootReducer
+export default rootReducer*/

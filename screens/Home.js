@@ -3,6 +3,7 @@ import { Text, View, Button, Image, FlatList } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { getPosts } from '../actions/post'
+import { Ionicons } from '@expo/vector-icons';
 import styles from '../styles'
 
 class Home extends React.Component {
@@ -10,7 +11,7 @@ class Home extends React.Component {
     this.props.getPosts()
   }
   
-render() {
+  render() {
     if(this.props.post === null) return null
     return (
       <View style={styles.container}>
@@ -19,7 +20,19 @@ render() {
           keyExtractor={(item) => item.id}
           renderItem={({item}) => (
             <View>
+              <View style={[styles.row, styles.center]}>
+                <View style={[styles.row, styles.center]}>
+                  <Image style={styles.roundImage} source={{uri: item.photo}}/>
+                  <Text>{item.username}</Text>
+                </View>
+                <Ionicons style={{margin: 5}} name='ios-flag' size={25} />
+              </View>
               <Image style={styles.postPhoto} source={{uri: item.postPhoto}}/>
+              <View style={styles.row}>
+                <Ionicons style={{margin: 5}} name='ios-heart-empty' size={25} />
+                <Ionicons style={{margin: 5}} name='ios-chatbubbles' size={25} />
+                <Ionicons style={{margin: 5}} name='ios-send' size={25} />
+              </View>
               <Text>{item.postDescription}</Text>
             </View>
           )}

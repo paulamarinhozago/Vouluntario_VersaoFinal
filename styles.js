@@ -6,7 +6,13 @@ export default styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
-
+    center: {
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    },
+    row: {
+      flexDirection: 'row'
+    },
     button_1: {
       marginTop:20,
       paddingVertical: 10,
@@ -74,11 +80,16 @@ export default styles = StyleSheet.create({
       position: 'absolute',
       bottom: 0
     },
-
     postPhoto: {
       width: 300,
       height: 300,
       borderRadius: 5,
 
+    },
+    roundImage: {
+      width: 40, 
+      height: 40,
+      borderRadius: 20,
+      margin: 5
     }
 });

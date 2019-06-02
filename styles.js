@@ -91,5 +91,13 @@ export default styles = StyleSheet.create({
       height: 40,
       borderRadius: 20,
       margin: 5
-    }
+    },
+    cameraButton: {
+      height: 50, 
+      width: 50,
+      borderRadius: 25,
+      alignSelf: 'center',
+      backgroundColor: '#fff',
+      marginBottom: 50
+    },
 });

@@ -1,18 +1,21 @@
 import React from 'react';
+import { Ionicons } from '@expo/vector-icons'
 import Login from '../screens/Login'
 import HomeScreen from '../screens/Home'
 import SearchScreen from '../screens/Search'
 import PostScreen from '../screens/Post'
 import ActivityScreen from '../screens/Activity'
 import ProfileScreen from '../screens/Profile'
+import CameraScreen from '../screens/Camera'
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { TouchableOpacity, Text} from 'react-native'
 
 export const HomeNavigator = createAppContainer(createStackNavigator(
   {
-    Home: { 
+    Profile: { 
       screen: HomeScreen,
       navigationOptions: {
-      	title: 'Eventos'
+        title: 'Eventos'
       }
     }
   }
@@ -31,14 +34,35 @@ export const SearchNavigator = createAppContainer(createStackNavigator(
 
 export const PostNavigator = createAppContainer(createStackNavigator(
   {
-    Post: { 
+    Home: { 
       screen: PostScreen,
+      navigationOptions: ({ navigation }) => ({
+        headerTitle: 'Criar Evento',
+        headerLeft: (
+          <TouchableOpacity onPress={() => navigation.navigate('Camera')} >
+            <Ionicons style={{marginLeft: 10}} name={'ios-camera'} size={30}/>
+          </TouchableOpacity>
+        ),
+      })
+    },
+    Camera: { 
+      screen: CameraScreen,
       navigationOptions: {
-        title: 'Criar Evento'
+        header: null
       }
     }
   }
 ));
+
+PostNavigator.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true
+  if (navigation.state.routes.some(route => route.routeName === 'Camera')) {
+    tabBarVisible = false
+  }
+  return {
+    tabBarVisible,
+  }
+}
 
 export const ActivityNavigator = createAppContainer(createStackNavigator(
   {
@@ -53,11 +77,17 @@ export const ActivityNavigator = createAppContainer(createStackNavigator(
 
 export const ProfileNavigator = createAppContainer(createStackNavigator(
   {
-    Profile: { 
+    Home: { 
       screen: ProfileScreen,
-      navigationOptions: {
-        title: 'Perfil'
-      }
-    }
+      navigationOptions: ({ navigation }) => ({
+        headerTitle: 'Perfil',
+        headerRight: (
+          <TouchableOpacity onPress={() => console.log('Message')} >
+            <Ionicons style={{marginRight: 10}} name={'ios-chatboxes'} size={30}/>
+          </TouchableOpacity>
+        ),
+      })
+    },
   }
 ));
+

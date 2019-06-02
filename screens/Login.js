@@ -13,6 +13,7 @@ class Login extends React.Component {
       if(user){
         this.props.getUser(user.uid)
         if(this.props.user != null){
+          this.props.getUser(user.uid)
           this.props.navigation.navigate('Home')
         }
       }

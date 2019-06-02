@@ -12,7 +12,7 @@ export const HomeNavigator = createAppContainer(createStackNavigator(
     Home: { 
       screen: HomeScreen,
       navigationOptions: {
-      	title: 'Home'
+      	title: 'Eventos'
       }
     }
   }
@@ -23,7 +23,7 @@ export const SearchNavigator = createAppContainer(createStackNavigator(
     Search: { 
       screen: SearchScreen,
       navigationOptions: {
-        title: 'Search'
+        title: 'Busca'
       }
     }
   }
@@ -34,7 +34,7 @@ export const PostNavigator = createAppContainer(createStackNavigator(
     Post: { 
       screen: PostScreen,
       navigationOptions: {
-        title: 'Post'
+        title: 'Criar Evento'
       }
     }
   }
@@ -45,7 +45,7 @@ export const ActivityNavigator = createAppContainer(createStackNavigator(
     Activity: { 
       screen: ActivityScreen,
       navigationOptions: {
-        title: 'Activity'
+        title: 'Notificações'
       }
     }
   }
@@ -56,7 +56,7 @@ export const ProfileNavigator = createAppContainer(createStackNavigator(
     Profile: { 
       screen: ProfileScreen,
       navigationOptions: {
-        title: 'Profile'
+        title: 'Perfil'
       }
     }
   }

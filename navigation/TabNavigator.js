@@ -5,7 +5,7 @@ import Search from '../screens/Search'
 import Activity from '../screens/Activity'
 import Profile from '../screens/Profile'
 import Post from '../screens/Post'
-import { HomeNavigator } from './StackNavigator'
+import { HomeNavigator, SearchNavigator, PostNavigator, ActivityNavigator, ProfileNavigator } from './StackNavigator'
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
@@ -22,7 +22,7 @@ const TabNavigator = createBottomTabNavigator({
         },
     },
     Search: {
-        screen: Search,
+        screen: SearchNavigator,
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
@@ -32,7 +32,7 @@ const TabNavigator = createBottomTabNavigator({
         },
     },
     Post: {
-        screen: Post,
+        screen: PostNavigator,
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
@@ -42,7 +42,7 @@ const TabNavigator = createBottomTabNavigator({
         },
     },
     Activity: {
-        screen: Activity,
+        screen: ActivityNavigator,
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
@@ -52,7 +52,7 @@ const TabNavigator = createBottomTabNavigator({
         },
     },
     Profile: {
-        screen: Profile,
+        screen: ProfileNavigator,
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (

@@ -14,22 +14,22 @@ export const uploadPost = () => {
 	return async (dispatch, getState) => {
 		try {
 			const { post, user } = getState()
+			const id = uuid.v4()
 			const upload = {
-				postPhoto: 'https://firebasestorage.googleapis.com/v0/b/vouluntario.appspot.com/o/ambiental.jpg?alt=media&token=061cfdf0-3f54-4f8c-99ac-6b6b7508cfea',
+				id: id,
+				postPhoto: post.photo,
 				postDescription: post.description,
 				uid: user.uid,
 				photo: user.photo,
 				username: user.username,
 			}
-			const ref = await db.collection('posts').doc()
-			upload.id = ref.id
-			ref.set(upload)
-
+			db.collection('posts').doc(id).set(upload)
 		} catch (e) {
 			alert(e)
 		}
 	}
 }
+
 
 export const getPosts = () => {
 	return async (dispatch, getState) => {

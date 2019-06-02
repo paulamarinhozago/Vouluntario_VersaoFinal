@@ -6,10 +6,15 @@ import { Text, View, TextInput, TouchableOpacity, Keyboard, Image } from 'react-
 import styles from '../styles'
 
 class Post extends React.Component {
+  post = () => {
+    this.props.uploadPost()
+    this.props.navigation.navigate('Home')
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.postPhoto} source={{uri: 'https://firebasestorage.googleapis.com/v0/b/vouluntario.appspot.com/o/ambiental.jpg?alt=media&token=061cfdf0-3f54-4f8c-99ac-6b6b7508cfea'}}/>
+        <Image style={styles.postPhoto} source={{uri: this.props.post.photo}}/>
         <TextInput
             style={styles.inputBox2}
             multiline = {true}
@@ -22,7 +27,7 @@ class Post extends React.Component {
             placeholder = 'Descrição'
         />
         
-        <TouchableOpacity style={styles.button_1} onPress={this.props.uploadPost} >
+        <TouchableOpacity style={styles.button_1} onPress={this.post} >
             <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Compartilhar</Text>
         </TouchableOpacity>
       </View>

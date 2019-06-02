@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { getPosts } from '../actions/post'
 import { Ionicons } from '@expo/vector-icons';
-import { EvilIcons } from '@expo/vector-icons'
 import styles from '../styles'
 
 class Home extends React.Component {
@@ -31,7 +30,7 @@ class Home extends React.Component {
               <Image style={styles.postPhoto} source={{uri: item.postPhoto}}/>
               <View style={styles.row}>
                 <Ionicons style={{margin: 5}} name='md-person-add' size={25} />
-                <Ionicons style={{margin: 5}} name='comment' size={25} />
+                <Ionicons style={{margin: 5}} name='ios-chatbubbles' size={25} />
               </View>
               <Text>{item.postDescription}</Text>
             </View>

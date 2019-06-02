@@ -15,7 +15,6 @@ class Profile extends React.Component {
         />
         <Text>{this.props.user.email}</Text>
         <Text>{this.props.user.username}</Text>
-        <Text>{this.props.user.uid}</Text>
         <Button title='Logout' onPress={() => firebase.auth().signOut()} />
       </View>
     );
@@ -28,4 +27,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps) (Profile)
+export default connect(mapStateToProps)(Profile)

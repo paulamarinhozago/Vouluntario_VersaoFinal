@@ -1,8 +1,13 @@
 import firebase from 'firebase'
 import db from '../config/firebase'
+import uuid from 'uuid'
 
 export const updateDescription = (text) => {
-    return {type: 'UPDATE_DESCRIPTION', payload: text}
+	return {type: 'UPDATE_DESCRIPTION', payload: text}
+}
+
+export const updatePhoto = (input) => {
+	return {type: 'UPDATE_PHOTO', payload: input}
 }
 
 export const uploadPost = () => {
@@ -16,7 +21,6 @@ export const uploadPost = () => {
 				photo: user.photo,
 				username: user.username,
 			}
-
 			const ref = await db.collection('posts').doc()
 			upload.id = ref.id
 			ref.set(upload)

@@ -6,24 +6,6 @@ import { Text, View, TextInput, TouchableOpacity, Keyboard, Image } from 'react-
 import styles from '../styles'
 
 class Post extends React.Component {
-  componentWillMount () {
-    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', ()=>{
-        this.setState(() => {
-            return {typedText: 'Keyboard is shown'}
-        })
-    });
-    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => {
-      this.setState(() => {
-          return {typedText: 'Keyboard Hide'};
-      });
-    });
-}
-
-componentWillUnmount () {
-    this.keyboardDidShowListener.remove();
-    this.keyboardDidHideListener.remove();
-}
-  
   render() {
     return (
       <View style={styles.container}>

@@ -12,9 +12,9 @@ export const uploadPost = () => {
 			const upload = {
 				postPhoto: 'https://firebasestorage.googleapis.com/v0/b/vouluntario.appspot.com/o/ambiental.jpg?alt=media&token=061cfdf0-3f54-4f8c-99ac-6b6b7508cfea',
 				postDescription: post.description,
-				// uid: user.uid,
-				// photo: user.photo,
-				// username: user.username,
+				uid: user.uid,
+				photo: user.photo,
+				username: user.username,
 			}
 
 			const ref = await db.collection('posts').doc()

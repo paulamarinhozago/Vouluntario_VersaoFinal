@@ -1,6 +1,6 @@
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import { Text, View, Button, Image, FlatList } from 'react-native';
+import { Text, View, Button, Image, FlatList, TouchableOpacity } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { getPosts } from '../actions/post'

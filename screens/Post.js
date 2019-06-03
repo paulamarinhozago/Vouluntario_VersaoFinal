@@ -64,6 +64,13 @@ class Post extends React.Component {
       	<Image style={styles.postPhoto} source={{uri: this.props.post.photo }}/>
         <TextInput
             style={styles.inputBox2}
+            editable = {true}
+            onChangeText={text => this.props.updateDescription(text)}
+            value={this.props.post.postDescription}
+            placeholder = 'Nome do Evento'
+        />
+        <TextInput
+            style={styles.inputBox2}
             multiline = {true}
             editable = {true}
             returnKeyType = 'done'

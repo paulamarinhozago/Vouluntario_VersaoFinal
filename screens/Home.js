@@ -52,7 +52,7 @@ class Home extends React.Component {
                 <Image style={styles.postPhoto} source={{uri: item.postPhoto}}/>
               </TouchableOpacity>
               <View style={styles.row}>
-                <Ionicons name='md-person-add' style={{margin: 5}} tintcolor={item.likes.includes(this.props.user.uid) ? 'springgreen' : 'gray'} size={25} />
+                {/* <Ionicons name='md-person-add' style={{margin: 5}} tintcolor={item.likes.includes(this.props.user.uid) ? 'springgreen' : 'gray'} size={25} /> */}
                 {/* <Ionicons style={{margin: 5}} name={item.likes.includes(this.props.user.uid) ? 'ios-heart' : 'ios-heart-empty'} size={25} /> */}
                 <Ionicons style={{margin: 5}} name='ios-chatbubbles' size={25} />
               </View>

@@ -73,7 +73,7 @@ class Post extends React.Component {
             placeholder = 'Descrição'
         />
         <TouchableOpacity style={styles.border} onPress={this.getLocations}>
-          <Text style={styles.gray}>{this.props.post.location ? this.props.post.location.name : 'Add a Location'}</Text>
+          <Text style={styles.gray}>{this.props.post.location ? this.props.post.location.name : 'Adicionar Localização'}</Text>
         </TouchableOpacity>
       	<TouchableOpacity style={styles.button_1} onPress={this.post} >
             <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Compartilhar</Text>

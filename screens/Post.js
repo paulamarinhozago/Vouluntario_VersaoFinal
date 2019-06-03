@@ -37,7 +37,7 @@ class Post extends React.Component {
       console.log(permission)
       const location = await Location.getCurrentPositionAsync()
       console.log(location)
-      const url = `${GOOGLE_API}?location=${location.coords.latitude},${location.coords.longitude}&rankby=distance&key=${AIzaSyCyrrMwcw9_XPoHx8m7FnMJ2NkGjBR8Zog}`
+      const url = `${GOOGLE_API}?location=${location.coords.latitude},${location.coords.longitude}&rankby=distance&key=${'AIzaSyCyrrMwcw9_XPoHx8m7FnMJ2NkGjBR8Zog'}`
       const response = await fetch(url)
       const data = await response.json()
       this.setState({ locations: data.results })

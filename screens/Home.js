@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Text, View, Button, Image, FlatList, TouchableOpacity } from 'react-native';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { getPosts, likePos, unlikePost } from '../actions/post'
+import { getPosts, likePost, unlikePost } from '../actions/post'
 import styles from '../styles'
 
 class Home extends React.Component {

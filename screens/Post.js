@@ -63,7 +63,7 @@ class Post extends React.Component {
         </Modal>
       	<Image style={styles.postPhoto} source={{uri: this.props.post.photo }}/>
         <TextInput
-            style={styles.inputBox2}
+            style={styles.inputBox3}
             editable = {true}
             onChangeText={text => this.props.updateDescription(text)}
             value={this.props.post.postDescription}

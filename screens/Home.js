@@ -11,11 +11,56 @@ class Home extends React.Component {
     this.props.getPosts()
   }
 
+  likePost = (post) => {
+    const { uid } = this.props.user
+    if(post.likes.includes(uid)){
+      this.props.unlikePost(post)
+    } else {
+      this.props.likePost(post)
+    }
+  }
+
   navigateMap = (item) => {
     console.log(this.props.navigation)
     this.props.navigation.navigate('Map', 
       { location: item.postLocation }
     )
+  }
+
+  render() {
+    if(this.props.post === null) return null
+    return (
+      <View style={styles.container}>
+        <FlatList
+          data={this.props.post.feed}
+          keyExtractor={(item) => item.id}
+          renderItem={({item}) => (
+            <View>
+              <View style={[styles.row, styles.center]}>
+                <View style={[styles.row, styles.center]}>
+                  <Image style={styles.roundImage} source={{uri: item.photo}}/>
+                  <View>
+                    <Text>{item.username}</Text>
+                    <TouchableOpacity onPress={() => this.navigateMap(item)} >
+                      <Text>{item.postLocation ? item.postLocation.name : null}</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                <Ionicons style={{margin: 5}} name='md-calendar' size={25} />
+              </View>
+              <TouchableOpacity onPress={() => this.likePost(item)} >
+                <Image style={styles.postPhoto} source={{uri: item.postPhoto}}/>
+              </TouchableOpacity>
+              <View style={styles.row}>
+                <Ionicons name='md-person-add' style={{margin: 5}} tintcolor={item.likes.includes(this.props.user.uid) ? 'springgreen' : 'gray'} size={25} />
+                <Ionicons style={{margin: 5}} name='ios-chatbubbles' size={25} />
+              </View>
+              <Text>{item.postDescription}</Text>
+            </View>
+          )}
+        />
+      </View>
+    );
   }
 
   render() {

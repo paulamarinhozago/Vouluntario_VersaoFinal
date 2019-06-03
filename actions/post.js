@@ -27,6 +27,7 @@ export const uploadPost = () => {
 				uid: user.uid,
 				photo: user.photo,
 				username: user.username,
+				likes: []
 			}
 			db.collection('posts').doc(id).set(upload)
 		} catch (e) {
@@ -34,7 +35,6 @@ export const uploadPost = () => {
 		}
 	}
 }
-
 
 export const getPosts = () => {
 	return async (dispatch, getState) => {
@@ -52,6 +52,34 @@ export const getPosts = () => {
 		}
 	}
 }
+
+export const likePost = (post) => {
+	return (dispatch, getState) => {
+	  const { uid } = getState().user
+	  try {
+		db.collection('posts').doc(post.id).update({
+		  likes: firebase.firestore.FieldValue.arrayUnion(uid)
+		})
+		dispatch(getPosts())
+	  } catch(e) {
+		console.error(e)
+	  }
+	}
+  }
+  
+  export const unlikePost = (post) => {
+	return async (dispatch, getState) => {
+	  const { uid } = getState().user
+	  try {
+		db.collection('posts').doc(post.id).update({
+		  likes: firebase.firestore.FieldValue.arrayRemove(uid)
+		})
+		dispatch(getPosts())
+	  } catch(e) {
+		console.error(e)
+	  }
+	}
+  }
 
 
 

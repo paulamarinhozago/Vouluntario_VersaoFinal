@@ -113,4 +113,13 @@ export default styles = StyleSheet.create({
       backgroundColor: '#fff',
       marginBottom: 50
     },
+    buttonSmall: {
+      marginTop: 20,
+      paddingVertical: 10,
+      alignItems: 'center',
+      backgroundColor: 'fuchsia',
+      borderRadius: 25,
+      fontWeight: 'bold',
+      width: 125
+    }
 });

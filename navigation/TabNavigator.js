@@ -46,7 +46,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: ' ',
             tabBarIcon: ({focused, tintColor}) => (
-                <Ionicons name='md-heart' size={32} color={focused ? tintColor = 'mediumorchid' : tintColor = 'gray'} />
+                <Ionicons name='ios-notifications' size={32} color={focused ? tintColor = 'mediumorchid' : tintColor = 'gray'} />
                 
             ),
         },

@@ -29,38 +29,33 @@ class Edit extends React.Component {
 
   render() {
     return (
-        <View style={styles.container}>
-            <Text>Foto de perfil:</Text>
-            <TouchableOpacity style={styles.center} onPress={this.openLibrary} >
-                <Image style={styles.roundImage} source={{uri: this.props.user.photo}}/>
-                <Text style={styles.bold}>Carregar Foto</Text>
-            </TouchableOpacity>
-            <Text>Nome de usuário:</Text>
-            <TextInput
-                style={styles.inputBoxBlack}
-                value={this.props.user.username}
-                onChangeText={input => this.props.updateUsername(input)}
-                placeholder = 'Nome de usuário'
-            />
-            <TouchableOpacity style={styles.button1} onPress={this.onPress}>
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.center} onPress={this.openLibrary} >
+          <Image style={styles.roundImage} source={{uri: this.props.user.photo}}/>
+          <Text style={styles.bold}>Upload Photo</Text>
+        </TouchableOpacity>
+        <TextInput
+        	style={styles.border}
+        	value={this.props.user.username}
+        	onChangeText={input => this.props.updateUsername(input)}
+        	placeholder='Username'
+        />
+      	<TouchableOpacity style={styles.button} onPress={this.onPress}>
       		<Text>Done</Text>
-      	    </TouchableOpacity>
-
-
-            <Text>{'\n'}</Text>
-        </View>
+      	</TouchableOpacity>
+      </View>
     );
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({updatePhoto, uploadPhoto, updateUser, updateEmail, updatePassword, updateUsername, updateBio, signup}, dispatch)
+  return bindActionCreators({ updatePhoto, uploadPhoto, updateUser, updateEmail, updatePassword, updateUsername, updateBio, signup }, dispatch)
 }
-  
+
 const mapStateToProps = (state) => {
-    return {
-      user: state.user
-    }
+  return {
+    user: state.user
+  }
 }
-  
-export default connect(mapStateToProps, mapDispatchToProps) (Edit)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Edit)

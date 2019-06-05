@@ -20,7 +20,7 @@ export const updateType = (type) => {
 
 export const updatePhoto = (photo) => {
 	return {type: 'UPDATE_PHOTO', payload: photo}
-}
+}	
 
 export const login = () => {
 	return async (dispatch, getState) => {
@@ -46,18 +46,18 @@ export const getUser = (uid) => {
 }
 
 export const updateUser = () => {
-	return async ( dispatch, getState )  => {
-	  const { uid, username, photo } = getState().user
-	  try {
-		db.collection('users').doc(uid).update({
-		  username: username,
-		  photo: photo
-		})
-	  } catch(e) {
-		alert(e)
-	  }
-	}
+  return async ( dispatch, getState )  => {
+    const { uid, username, photo } = getState().user
+    try {
+      db.collection('users').doc(uid).update({
+        username: username,
+        photo: photo
+      })
+    } catch(e) {
+      alert(e)
+    }
   }
+}
 
 export const signup = () => {
 	return async (dispatch, getState) => {

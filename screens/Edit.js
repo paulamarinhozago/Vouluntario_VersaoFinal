@@ -1,10 +1,12 @@
 import React from 'react';
-import { Text, View, TextInput, Button, TouchableOpacity, Image, ImageBackground, Picker } from 'react-native';
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import { ImagePicker, Permissions } from 'expo';
-import { updatePhoto, updateEmail, updatePassword, updateUsername, updateBio, signup, updateUser } from '../actions/user'
 import styles from '../styles'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { ImagePicker, Permissions } from 'expo';
+import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
+import { updatePhoto, updateEmail, updatePassword, updateUsername, updateBio, signup, updateUser } from '../actions/user'
+import { uploadPhoto } from '../actions'
+
 
 class Edit extends React.Component {
   
@@ -28,10 +30,12 @@ class Edit extends React.Component {
   render() {
     return (
         <View style={styles.container}>
+            <Text>Foto de perfil:</Text>
             <TouchableOpacity style={styles.center} onPress={this.openLibrary} >
                 <Image style={styles.roundImage} source={{uri: this.props.user.photo}}/>
                 <Text style={styles.bold}>Carregar Foto</Text>
             </TouchableOpacity>
+            <Text>Nome de usuário:</Text>
             <TextInput
                 style={styles.inputBoxBlack}
                 value={this.props.user.username}
@@ -50,7 +54,7 @@ class Edit extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({updatePhoto, updateEmail, updatePassword, updateUsername, updateBio, signup, updateUser}, dispatch)
+    return bindActionCreators({updatePhoto, uploadPhoto, updateUser, updateEmail, updatePassword, updateUsername, updateBio, signup}, dispatch)
 }
   
 const mapStateToProps = (state) => {

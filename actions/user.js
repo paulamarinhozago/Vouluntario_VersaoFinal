@@ -18,6 +18,10 @@ export const updateType = (type) => {
     return {type: 'UPDATE_TYPE', payload: type}
 }
 
+export const updatePhoto = (photo) => {
+	return {type: 'UPDATE_PHOTO', payload: photo}
+}
+
 export const login = () => {
 	return async (dispatch, getState) => {
 		try {

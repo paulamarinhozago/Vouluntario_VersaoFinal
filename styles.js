@@ -60,8 +60,8 @@ export default styles = StyleSheet.create({
 
     inputBoxBlack: {
       width:300,
-      backgroundColor: 'mediumorchid',
       borderRadius:25,
+      borderColor: 'gray',
       paddingHorizontal:16,
       paddingVertical:10,
       fontSize:16,

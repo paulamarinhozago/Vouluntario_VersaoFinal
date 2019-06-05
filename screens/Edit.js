@@ -35,13 +35,13 @@ class Edit extends React.Component {
           <Text style={styles.bold}>Upload Photo</Text>
         </TouchableOpacity>
         <TextInput
-        	style={styles.border}
+        	style={styles.inputBoxBlack}
         	value={this.props.user.username}
         	onChangeText={input => this.props.updateUsername(input)}
         	placeholder='Username'
         />
-      	<TouchableOpacity style={styles.button} onPress={this.onPress}>
-      		<Text>Done</Text>
+      	<TouchableOpacity style={styles.button_1} onPress={this.onPress}>
+      		<Text style={{color: 'white', fontSize:15, fontWeight:'bold'}}>Salvar</Text>
       	</TouchableOpacity>
       </View>
     );

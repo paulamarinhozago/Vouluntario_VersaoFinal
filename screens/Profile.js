@@ -14,10 +14,10 @@ class Profile extends React.Component {
         <Text>{this.props.user.username}</Text>
         <Text>{this.props.user.bio}</Text>
         <TouchableOpacity style={styles.buttonSmall} onPress={() => this.props.navigation.navigate('Edit')}>
-          <Text style={styles.bold}>Edit Profile</Text>
+          <Text style={{color: 'white', fontSize:15, fontWeight:'bold'}}>Edit Profile</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonSmall} onPress={() => firebase.auth().signOut()}>
-          <Text style={styles.bold}>Logout</Text>
+          <Text style={{color: 'white', fontSize:15, fontWeight:'bold'}}>Logout</Text>
         </TouchableOpacity>
       </View>
     );

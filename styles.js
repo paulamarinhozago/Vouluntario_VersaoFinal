@@ -2,80 +2,92 @@ import { StyleSheet, Dimensions } from 'react-native';
 const  { width } = Dimensions.get('window');
 
 export default styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    row: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-    },
-    center: {
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    space: {
-      justifyContent: 'space-between',
-    },
-    left: {
-      alignItems: 'flex-start',
-    },
-    right: {
-      alignItems: 'flex-end',
-    },
-    row: {
-      flexDirection: 'row'
-    },
-    center: {
-      alignItems: 'center',
-      justifyContent: 'space-between',
-    },
-    row: {
-      flexDirection: 'row'
-    },
-    button_1: {
-      marginTop:20,
-      paddingVertical: 10,
-      alignItems: 'center',
-      backgroundColor: 'fuchsia',
-      borderRadius: 25,
-      width:200,
-      fontWeight: 'bold',
-    },
-    input: {
-      width: width*.90,
-      margin: 25,
-      padding: 15,
-      alignSelf: 'center',
-      borderColor: 'gray',
-      borderWidth: 1,
-      borderRadius: 50,
-      fontSize: 16,
-    },
-    button_2: {
-      marginTop:20,
-      paddingVertical: 10,
-      alignItems: 'center',
-      backgroundColor: 'mediumorchid',
-      borderRadius: 25,
-      width:200,
-    },
+  container2: {
+    flex: 1,
+    backgroundColor: '#fff'
+  },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  row: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  center: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  space: {
+    justifyContent: 'space-between',
+  },
+  left: {
+    alignItems: 'flex-start',
+  },
+  right: {
+    alignItems: 'flex-end',
+  },
+  row: {
+    flexDirection: 'row'
+  },
+  input: {
+    width: width*.90,
+    margin: 15,
+    padding: 15,
+    alignSelf: 'center',
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 50,
+    fontSize: 16,
+  },
+  border: {
+    width: '85%',
+    margin: 10,
+    padding: 15,
+    fontSize: 16,
+    borderColor: '#d3d3d3',
+    borderBottomWidth: 1,
+    textAlign: 'center'
+  },
+  roundImage: {
+    width: 40, 
+    height: 40,
+    borderRadius: 20,
+    margin: 10,
+    backgroundColor: '#adadad'
+  },
+  cameraButton: {
+    height: 100, 
+    width: 100,
+    borderRadius: 50,
+    alignSelf: 'center',
+    backgroundColor: '#fff',
+    marginBottom: 50
+  },
+  
+  button_1: {
+    marginTop:20,
+    paddingVertical: 10,
+    alignItems: 'center',
+    backgroundColor: 'fuchsia',
+    borderRadius: 25,
+    width:200,
+    fontWeight: 'bold',
+  },
+  button_2: {
+    marginTop:20,
+    paddingVertical: 10,
+    alignItems: 'center',
+    backgroundColor: 'mediumorchid',
+    borderRadius: 25,
+    width:200,
+  },
 
-    image: {
-      height: 55,
-      width: 55
-    },
-
-    border: {
-      width: '85%',
-      margin:10,
-      padding: 15,
-      fontSize: 16,
-      borderColor: 'gray',
-      borderBottomWidth: 1,
-      textAlign: 'center'
-    },
+  image: {
+    height: 55,
+    width: 55
+  },
 
     inputBox: {
       width:300,
@@ -85,16 +97,6 @@ export default styles = StyleSheet.create({
       paddingVertical:10,
       fontSize:16,
       color: 'white',
-      marginVertical:10
-    },
-
-    inputBoxBlack: {
-      width:300,
-      borderRadius:25,
-      borderColor: 'gray',
-      paddingHorizontal:16,
-      paddingVertical:10,
-      fontSize:16,
       marginVertical:10
     },
 
@@ -145,14 +147,7 @@ export default styles = StyleSheet.create({
       borderRadius: 20,
       margin: 5
     },
-    cameraButton: {
-      height: 50, 
-      width: 50,
-      borderRadius: 25,
-      alignSelf: 'center',
-      backgroundColor: '#fff',
-      marginBottom: 50
-    },
+   
     buttonSmall: {
       marginTop: 20,
       paddingVertical: 10,

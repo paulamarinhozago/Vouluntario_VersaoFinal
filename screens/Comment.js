@@ -29,7 +29,11 @@ class Comment extends React.Component {
           data={this.props.post.comments}
           renderItem={({item}) => (
             <View style={[styles.row, styles.space]}>
+              <Image style={styles.roundImage} source={{uri: item.commenterPhoto}}/>
+              <View style={[styles.container, styles.left]}>
+                <Text>{item.commenterName}</Text>
                 <Text>{item.comment}</Text>
+              </View>
             </View>
           )}/>
   	      <TextInput
@@ -37,7 +41,7 @@ class Comment extends React.Component {
   	        onChangeText={(comment) => this.setState({comment})}
   	        value={this.state.comment}
   	        returnKeyType='send'
-            placeholder='Escreva um comentário!'
+            placeholder='Add Comment'
             onSubmitEditing={this.postComment}/>
       </KeyboardAvoidingView>
     );

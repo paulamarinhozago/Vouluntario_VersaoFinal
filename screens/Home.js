@@ -30,39 +30,33 @@ class Home extends React.Component {
   render() {
     if(this.props.post === null) return null
     return (
-      <View style={styles.container2}>
+      <View style={styles.container}>
         <FlatList
           data={this.props.post.feed}
           keyExtractor={(item) => item.id}
-          renderItem={({item}) => {
-            const liked = item.likes.includes(this.props.user.uid)
-            return (
-              <View>
-                <View style={[styles.row, styles.space]}>
-                  <View style={[styles.row, styles.center]}>
-                    <Image style={styles.roundImage} source={{uri: item.photo}}/>
-                    <View>
-                      <Text>{item.username}</Text>
-                      <TouchableOpacity onPress={() => this.navigateMap(item)} >
-                        <Text>{item.postLocation ? item.postLocation.name : null}</Text>
-                      </TouchableOpacity>
-                    </View>
+          renderItem={({item}) => (
+            <View>
+              <View style={[styles.row, styles.center]}>
+                <View style={[styles.row, styles.center]}>
+                  <Image style={styles.roundImage} source={{uri: item.photo}}/>
+                  <View>
+                    <Text>{item.username}</Text>
+                    <TouchableOpacity onPress={() => this.navigateMap(item)} >
+                      <Text>{item.postLocation ? item.postLocation.name : null}</Text>
+                    </TouchableOpacity>
                   </View>
-                  <Ionicons style={{margin: 5}} name='md-calendar' size={25} />
                 </View>
-                <TouchableOpacity onPress={() => this.likePost(item)} >
-                  <Image style={styles.postPhoto} source={{uri: item.postPhoto}}/>
-                </TouchableOpacity>
-                <View style={styles.row}>
-                  <Ionicons name='md-person-add' style={{margin: 5}} color={item.likes.includes(this.props.user.uid) ? 'springgreen' : 'black'} size={25} />
-                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Comment', item)} >
-                    <Ionicons style={{margin: 5}} name='ios-chatbubbles' size={25} />
-                  </TouchableOpacity>
-                </View>
-                <Text>{item.postDescription}</Text>
+                <Ionicons style={{margin: 5}} name='md-calendar' size={25} />
               </View>
-            )
-          }}
+              <TouchableOpacity onPress={() => this.likePost(item)} >
+                <Image style={styles.postPhoto} source={{uri: item.postPhoto}}/>
+              </TouchableOpacity>
+              <View style={styles.row}><Ionicons name='md-person-add' style={{margin: 5}} color={item.likes.includes(this.props.user.uid) ? 'springgreen' : 'gray'} size={25} />
+                <Ionicons color='gray' style={{margin: 5}} name='ios-chatbubbles' size={25} />
+              </View>
+              <Text>{item.postDescription}</Text>
+            </View>
+          )}
         />
       </View>
     );

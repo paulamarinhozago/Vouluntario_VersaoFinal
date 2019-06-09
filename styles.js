@@ -11,12 +11,35 @@ export default styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff'
   },
+  row: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
   center: {
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  space: {
+    justifyContent: 'space-between',
+  },
+  left: {
+    alignItems: 'flex-start',
+  },
+  right: {
+    alignItems: 'flex-end'
+  },
   row: {
     flexDirection: 'row'
+  },
+  input: {
+    width: width*.90,
+    margin: 25,
+    padding: 15,
+    alignSelf: 'center',
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 50,
+    fontSize: 16,
   },
   button_1: {
     marginTop:20,

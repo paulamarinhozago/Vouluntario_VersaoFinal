@@ -23,14 +23,14 @@ class Comment extends React.Component {
 
   render() {
     return (
-      <KeyboardAvoidingView enabled behavior='padding' style={styles.container2}>
+      <KeyboardAvoidingView enabled behavior='padding' style={styles.container}>
         <FlatList
           keyExtractor={(item) => JSON.stringify(item.date)}
           data={this.props.post.comments}
           renderItem={({item}) => (
             <View style={[styles.row, styles.space]}>
               <Image style={styles.roundImage} source={{uri: item.commenterPhoto}}/>
-              <View style={[styles.container2, styles.left]}>
+              <View style={[styles.container, styles.left]}>
                 <Text>{item.commenterName}</Text>
                 <Text>{item.comment}</Text>
               </View>
@@ -41,7 +41,7 @@ class Comment extends React.Component {
   	        onChangeText={(comment) => this.setState({comment})}
   	        value={this.state.comment}
   	        returnKeyType='send'
-            placeholder='Add Comment'
+            placeholder='Escreva um comentário!'
             onSubmitEditing={this.postComment}/>
       </KeyboardAvoidingView>
     );

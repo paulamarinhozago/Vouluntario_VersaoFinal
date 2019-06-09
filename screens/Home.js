@@ -45,17 +45,19 @@ class Home extends React.Component {
                       <Text>{item.postLocation ? item.postLocation.name : null}</Text>
                     </TouchableOpacity>
                   </View>
+                  </View>
+                    <Ionicons style={{margin: 5}} name='md-calendar' size={25} />
+                  </View>
+                  <TouchableOpacity onPress={() => this.likePost(item)} >
+                    <Image style={styles.postPhoto} source={{uri: item.postPhoto}}/>
+                  </TouchableOpacity>
+                  <View style={styles.row}><Ionicons name='md-person-add' style={{margin: 5}} color={item.likes.includes(this.props.user.uid) ? 'springgreen' : 'black'} size={25} />
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Comment', item)} >
+                        <Ionicons style={{margin: 5}} name='ios-chatbubbles' size={25} />
+                      </TouchableOpacity>
+                  </View>
+                  <Text>{item.postDescription}</Text>
                 </View>
-                <Ionicons style={{margin: 5}} name='md-calendar' size={25} />
-              </View>
-              <TouchableOpacity onPress={() => this.likePost(item)} >
-                <Image style={styles.postPhoto} source={{uri: item.postPhoto}}/>
-              </TouchableOpacity>
-              <View style={styles.row}><Ionicons name='md-person-add' style={{margin: 5}} color={item.likes.includes(this.props.user.uid) ? 'springgreen' : 'gray'} size={25} />
-                <Ionicons color='gray' style={{margin: 5}} name='ios-chatbubbles' size={25} />
-              </View>
-              <Text>{item.postDescription}</Text>
-            </View>
           )}
         />
       </View>

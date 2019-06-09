@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import { ImagePicker, Location, Permissions } from 'expo';
 import { NavigationEvents } from 'react-navigation';
 import { updateDescription, updateLocation, uploadPost, updatePhoto } from '../actions/post'
-import { FlatList, Modal, SafeAreaView, Text, View, TextInput, TouchableOpacity, Keyboard, Image } from 'react-native';
+import { FlatList, Modal, SafeAreaView, Text, View, TextInput, TouchableOpacity, Keyboard, KeyboardAvoidingView, Image } from 'react-native';
 const GOOGLE_API = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
 import { uploadPhoto } from '../actions'
 
@@ -66,6 +66,7 @@ class Post extends React.Component {
 
   render() {
     return (
+      <KeyboardAvoidingView enabled behavior='padding' style={styles.container}>
       <View style={styles.container}>
         <NavigationEvents onWillFocus={this.onWillFocus}/>
         <Modal animationType='slide' transparent={false} visible={this.state.showModal}>
@@ -109,6 +110,7 @@ class Post extends React.Component {
             <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Compartilhar</Text>
         </TouchableOpacity>
       </View>
+      </KeyboardAvoidingView>
     );
   }
 }

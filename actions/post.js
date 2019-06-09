@@ -27,7 +27,8 @@ export const uploadPost = () => {
 				uid: user.uid,
 				photo: user.photo || ' ',
 				username: user.username,
-				likes: []
+				likes: [],
+        comments: []
 			}
 			db.collection('posts').doc(id).set(upload)
 		} catch (e) {
@@ -102,5 +103,25 @@ export const unlikePost = (post) => {
   }
 }
 
+export const addComment = (text, postId) => {
+  return (dispatch, getState) => {
+    const { uid, photo, username } = getState().user
+    try {
+      const comment = {
+        comment: text,
+        commenterId: uid,
+        commenterPhoto: photo || '',
+        commenterName: username,
+        date: new Date().getTime(),
+      }
+      console.log(comment)
+      db.collection('posts').doc(postId).update({
+        comments: firebase.firestore.FieldValue.arrayUnion(comment)
+      })
+    } catch(e) {
+      console.error(e)
+    }
+  }
+}
 
 

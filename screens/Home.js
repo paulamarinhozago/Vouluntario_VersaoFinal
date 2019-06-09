@@ -55,7 +55,9 @@ class Home extends React.Component {
                 </TouchableOpacity>
                 <View style={styles.row}>
                   <Ionicons name='md-person-add' style={{margin: 5}} color={item.likes.includes(this.props.user.uid) ? 'springgreen' : 'black'} size={25} />
-                  <Ionicons style={{margin: 5}} name='ios-chatbubbles' size={25} />
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Comment', item)} >
+                    <Ionicons style={{margin: 5}} name='ios-chatbubbles' size={25} />
+                  </TouchableOpacity>
                 </View>
                 <Text>{item.postDescription}</Text>
               </View>

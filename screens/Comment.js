@@ -2,8 +2,8 @@ import React from 'react';
 import styles from '../styles'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Text, View, TextInput } from 'react-native';
-import { addComment } from '../actions/post';
+import { Text, View, TextInput, FlatList, Image, KeyboardAvoidingView } from 'react-native';
+import { addComment, getComments } from '../actions/post';
 
 class Comment extends React.Component {
   state = {
@@ -18,27 +18,39 @@ class Comment extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>{this.state.comment}</Text>
-	      <TextInput
-	        style={styles.input}
-	        onChangeText={(comment) => this.setState({comment})}
-	        value={this.state.comment}
-	        returnKeyType='send'
-          placeholder='Escreva um comentário!'
-          onSubmitEditing={this.postComment}/>
-      </View>
+      <KeyboardAvoidingView enabled behavior='padding' style={styles.container}>
+        <FlatList
+          keyExtractor={(item) => JSON.stringify(item.date)}
+          data={this.props.post.comments}
+          renderItem={({item}) => (
+            <View style={[styles.row, styles.space]}>
+              <Image style={styles.roundImage} source={{uri: item.commenterPhoto}}/>
+              <View style={[styles.container, styles.left]}>
+                <Text>{item.commenterName}</Text>
+                <Text>{item.comment}</Text>
+              </View>
+            </View>
+          )}/>
+  	      <TextInput
+  	        style={styles.input}
+  	        onChangeText={(comment) => this.setState({comment})}
+  	        value={this.state.comment}
+  	        returnKeyType='send'
+            placeholder='Escreva um comentário!'
+            onSubmitEditing={this.postComment}/>
+      </KeyboardAvoidingView>
     );
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ addComment }, dispatch)
+  return bindActionCreators({ addComment, getComments }, dispatch)
 }
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
+    post: state.post
   }
 }
 

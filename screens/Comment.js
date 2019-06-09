@@ -3,7 +3,7 @@ import styles from '../styles'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Text, View, TextInput } from 'react-native';
-import { addComment } from '../actions/post';
+import { addComment, getComments } from '../actions/post';
 
 class Comment extends React.Component {
   state = {
@@ -38,12 +38,13 @@ class Comment extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ addComment }, dispatch)
+  return bindActionCreators({ addComment, getComments }, dispatch)
 }
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
+    post: state.post
   }
 }
 

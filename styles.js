@@ -141,7 +141,7 @@ export default styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginBottom: 50
   },
-  smallButton: {
+  buttonSmall: {
     marginTop:20,
     paddingVertical: 10,
     alignItems: 'center',

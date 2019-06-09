@@ -1,15 +1,15 @@
 import firebase from 'firebase';
 require('firebase/firestore')
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDOUGp4Xwok5PWh_YogJND5YjmGgjZf2GU",
-    authDomain: "vouluntario.firebaseapp.com",
-    databaseURL: "https://vouluntario.firebaseio.com",
-    projectId: "vouluntario",
-    storageBucket: "vouluntario.appspot.com",
-    messagingSenderId: "574740672545",
-    appId: "1:574740672545:web:4ad263244dfa57b7"
-};
+var firebaseConfig = {
+    apiKey: "AIzaSyAjraqhu-SkwGTwCwLCVvXY8lwp1G6k74c",
+    authDomain: "vouluntario-ff111.firebaseapp.com",
+    databaseURL: "https://vouluntario-ff111.firebaseio.com",
+    projectId: "vouluntario-ff111",
+    storageBucket: "",
+    messagingSenderId: "261557316762",
+    appId: "1:261557316762:web:9a20b0a649b36365"
+  };
 
 firebase.initializeApp(firebaseConfig)
 

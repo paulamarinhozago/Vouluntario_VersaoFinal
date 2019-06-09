@@ -2,10 +2,12 @@ import React from 'react';
 import styles from '../styles'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Location, Permissions } from 'expo';
-import { updateDescription, updateLocation, uploadPost } from '../actions/post'
+import { ImagePicker, Location, Permissions } from 'expo';
+import { NavigationEvents } from 'react-navigation';
+import { updateDescription, updateLocation, uploadPost, updatePhoto } from '../actions/post'
 import { FlatList, Modal, SafeAreaView, Text, View, TextInput, TouchableOpacity, Keyboard, Image } from 'react-native';
 const GOOGLE_API = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
+import { uploadPhoto } from '../actions'
 
 class Post extends React.Component {
   state = {
@@ -13,9 +15,30 @@ class Post extends React.Component {
     locations: []
   }
 
+  componentDidMount(){
+    this.getLocations()
+  }
+
   post = () => {
     this.props.uploadPost()
     this.props.navigation.navigate('Home')
+  }
+
+  onWillFocus = () => {
+    if(!this.props.post.photo){
+      this.openLibrary()
+    }
+  }
+
+  openLibrary = async () => {
+    const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL)
+    if (status === 'granted') {
+      const image = await ImagePicker.launchImageLibraryAsync()
+      if(!image.cancelled){
+        const url = await this.props.uploadPhoto(image)
+        this.props.updatePhoto(url)
+      }
+    }
   }
 
   setLocation = (location) => {
@@ -31,23 +54,20 @@ class Post extends React.Component {
   }
 
   getLocations = async () => {
-    this.setState({ showModal: true })
     const permission = await Permissions.askAsync(Permissions.LOCATION)
     if (permission.status === 'granted') {
-      console.log(permission)
       const location = await Location.getCurrentPositionAsync()
-      console.log(location)
       const url = `${GOOGLE_API}?location=${location.coords.latitude},${location.coords.longitude}&rankby=distance&key=${'AIzaSyCyrrMwcw9_XPoHx8m7FnMJ2NkGjBR8Zog'}`
       const response = await fetch(url)
       const data = await response.json()
       this.setState({ locations: data.results })
-      console.log( data )
     }
   }
 
   render() {
     return (
       <View style={styles.container}>
+        <NavigationEvents onWillFocus={this.onWillFocus}/>
         <Modal animationType='slide' transparent={false} visible={this.state.showModal}>
           <SafeAreaView style={[styles.container, styles.center]}>
             <FlatList
@@ -79,9 +99,12 @@ class Post extends React.Component {
             value={this.props.post.postDescription}
             placeholder = 'Descrição'
         />
-        <TouchableOpacity style={styles.border} onPress={this.getLocations}>
-          <Text style={styles.gray}>{this.props.post.location ? this.props.post.location.name : 'Adicionar Localização'}</Text>
-        </TouchableOpacity>
+        {
+          this.state.locations.length > 0 ?        
+          <TouchableOpacity style={styles.border} onPress={() => this.setState({ showModal: true })}>
+            <Text style={styles.gray}>{this.props.post.location ? this.props.post.location.name : 'Adicionar Localização'}</Text>
+          </TouchableOpacity> : null
+        }
       	<TouchableOpacity style={styles.button_1} onPress={this.post} >
             <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Compartilhar</Text>
         </TouchableOpacity>
@@ -91,7 +114,7 @@ class Post extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ updateDescription, updateLocation, uploadPost }, dispatch)
+  return bindActionCreators({ updateDescription, uploadPost, updateLocation, uploadPhoto, updatePhoto }, dispatch)
 }
 
 const mapStateToProps = (state) => {

@@ -9,7 +9,7 @@ import firebase from './config/firebase'
 import SwitchNavigator from './navigation/SwitchNavigator';
 const middleware = applyMiddleware(thunkMiddleware, logger);
 const store = createStore(reducer, middleware);
-// console.disableYellowBox = true;
+console.disableYellowBox = true;
 
 export default class App extends React.Component {
   render() {

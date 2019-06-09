@@ -10,9 +10,14 @@ class Comment extends React.Component {
   	comment: ''
   }
 
+  componentDidMount = () => {
+    const { params } = this.props.navigation.state
+    this.props.getComments(params)
+  }
+
   postComment = () => {
   	const { params } = this.props.navigation.state
-  	this.props.addComment(this.state.comment, params.id)
+  	this.props.addComment(this.state.comment, params)
   	this.setState({comment: ''})
   }
 
@@ -24,11 +29,7 @@ class Comment extends React.Component {
           data={this.props.post.comments}
           renderItem={({item}) => (
             <View style={[styles.row, styles.space]}>
-              <Image style={styles.roundImage} source={{uri: item.commenterPhoto}}/>
-              <View style={[styles.container, styles.left]}>
-                <Text>{item.commenterName}</Text>
                 <Text>{item.comment}</Text>
-              </View>
             </View>
           )}/>
   	      <TextInput

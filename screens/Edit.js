@@ -35,7 +35,7 @@ class Edit extends React.Component {
           <Text style={styles.bold}>Upload Photo</Text>
         </TouchableOpacity>
         <TextInput
-        	style={styles.inputBoxBlack}
+        	style={styles.inputBox}
         	value={this.props.user.username}
         	onChangeText={input => this.props.updateUsername(input)}
         	placeholder='Username'

@@ -110,10 +110,9 @@ export const getComments = (post) => {
   }
 }
 
-export const addComment = (text, post) => {
+export const addComment = (text, postId) => {
   return (dispatch, getState) => {
     const { uid, photo, username } = getState().user
-    let comments = cloneDeep(getState().post.comments.reverse())
     try {
       const comment = {
         comment: text,
@@ -123,17 +122,9 @@ export const addComment = (text, post) => {
         date: new Date().getTime(),
       }
       console.log(comment)
-      db.collection('posts').doc(post.id).update({
+      db.collection('posts').doc(postId).update({
         comments: firebase.firestore.FieldValue.arrayUnion(comment)
       })
-      comment.postId = post.id
-      comment.postPhoto = post.postPhoto
-      comment.uid = post.uid
-      comment.type = 'COMMENT'
-      comments.push(comment)
-      dispatch({ type: 'GET_COMMENTS', payload: comments.reverse() })
-
-      db.collection('activity').doc().set(comment)
     } catch(e) {
       console.error(e)
     }

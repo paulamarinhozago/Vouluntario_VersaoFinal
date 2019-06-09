@@ -30,7 +30,7 @@ class Comment extends React.Component {
           renderItem={({item}) => (
             <View style={[styles.row, styles.space]}>
               <Image style={styles.roundImage} source={{uri: item.commenterPhoto}}/>
-              <View style={[styles.container2, styles.left]}>
+              <View style={[styles.container, styles.left]}>
                 <Text>{item.commenterName}</Text>
                 <Text>{item.comment}</Text>
               </View>

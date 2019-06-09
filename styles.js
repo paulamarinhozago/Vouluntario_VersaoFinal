@@ -2,14 +2,14 @@ import { StyleSheet, Dimensions } from 'react-native';
 const  { width } = Dimensions.get('window');
 
 export default styles = StyleSheet.create({
-  container2: {
-    flex: 1,
-    backgroundColor: '#fff'
-  },
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  container2: {
+    flex: 1,
+    backgroundColor: '#fff'
   },
   row: {
     flexDirection: 'row',
@@ -36,11 +36,12 @@ export default styles = StyleSheet.create({
     margin: 15,
     padding: 15,
     alignSelf: 'center',
-    borderColor: 'gray',
+    borderColor: '#d3d3d3',
     borderWidth: 1,
     borderRadius: 50,
     fontSize: 16,
   },
+  
   border: {
     width: '85%',
     margin: 10,
@@ -49,6 +50,10 @@ export default styles = StyleSheet.create({
     borderColor: '#d3d3d3',
     borderBottomWidth: 1,
     textAlign: 'center'
+  },
+  postPhoto: {
+    height: 250,
+    width: width,
   },
   roundImage: {
     width: 40, 
@@ -64,6 +69,25 @@ export default styles = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: '#fff',
     marginBottom: 50
+  },
+  button: {
+    marginTop: 20,
+    paddingVertical: 10,
+    alignItems: 'center',
+    borderColor: '#d3d3d3',
+    borderWidth: 1,
+    borderRadius: 5,
+    width: 200
+  },
+  buttonSmall: {
+    margin: 10,
+    marginBottom: 0,
+    padding: 5,
+    alignItems: 'center',
+    borderColor: '#d3d3d3',
+    borderWidth: 1,
+    borderRadius: 5,
+    width: 125
   },
   
   button_1: {

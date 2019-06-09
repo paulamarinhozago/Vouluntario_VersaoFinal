@@ -30,7 +30,7 @@ class Home extends React.Component {
   render() {
     if(this.props.post === null) return null
     return (
-      <View style={styles.container}>
+      <View style={styles.container2}>
         <FlatList
           data={this.props.post.feed}
           keyExtractor={(item) => item.id}
@@ -38,7 +38,7 @@ class Home extends React.Component {
             const liked = item.likes.includes(this.props.user.uid)
             return (
               <View>
-                <View style={[styles.row, styles.center]}>
+                <View style={[styles.row, styles.space]}>
                   <View style={[styles.row, styles.center]}>
                     <Image style={styles.roundImage} source={{uri: item.photo}}/>
                     <View>

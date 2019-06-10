@@ -56,7 +56,7 @@ class Home extends React.Component {
                         <Ionicons style={{margin: 5}} name='ios-chatbubbles' size={25} />
                       </TouchableOpacity>
                   </View>
-                  <Text>{item.postDescription}</Text>
+                  <Text style={{ width: 300 }}>{item.postDescription}</Text>
                 </View>
           )}
         />

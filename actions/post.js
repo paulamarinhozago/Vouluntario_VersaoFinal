@@ -104,6 +104,12 @@ export const unlikePost = (post) => {
   }
 }
 
+export const getComments = (post) => {
+  return dispatch => {
+    dispatch({ type: 'GET_COMMENTS', payload: orderBy(post.comments, 'date','desc') })
+  }
+}
+
 export const addComment = (text, postId) => {
   return (dispatch, getState) => {
     const { uid, photo, username } = getState().user

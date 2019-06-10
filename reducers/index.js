@@ -12,6 +12,17 @@ const user = (state = {}, action) => {
       return {...state, username: action.payload}
     case 'UPDATE_TYPE':
       return{...state, type: action.payload}
+    case 'UPDATE_PHOTO':
+      return {...state, photo: action.payload}
+    default:
+      return state
+  }
+}
+
+const profile = (state = {}, action) => {
+  switch (action.type) {
+    case 'GET_PROFILE':
+      return action.payload
     default:
       return state
   }
@@ -46,7 +57,8 @@ const modal = (state = null, action) => {
 }
 
 const rootReducer = combineReducers({
-	  user,
+    user,
+    profile,
     post,
     modal
 })

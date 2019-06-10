@@ -28,7 +28,7 @@ const post = (state=null, action) => {
     case 'GET_POSTS':
       return {...state, feed: action.payload}
     case 'GET_COMMENTS': 
-      return { ...state, comments: action.payload }
+      return {...state, comments: action.payload}
     default:
       return state
   }

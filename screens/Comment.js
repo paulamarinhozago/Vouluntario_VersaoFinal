@@ -23,7 +23,7 @@ class Comment extends React.Component {
 
   render() {
     return (
-      <KeyboardAvoidingView enabled behavior='padding' style={styles.container}>
+      <KeyboardAvoidingView enabled behavior='padding' style={styles.container2}>
         <FlatList
           keyExtractor={(item) => JSON.stringify(item.date)}
           data={this.props.post.comments}

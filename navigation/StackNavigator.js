@@ -49,9 +49,7 @@ export const SearchNavigator = createAppContainer(createStackNavigator(
   {
     Search: { 
       screen: SearchScreen,
-      navigationOptions: {
-        title: 'Busca'
-      }
+      header: null
     }
   }
 ));

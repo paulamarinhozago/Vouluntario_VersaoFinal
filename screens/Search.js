@@ -2,8 +2,9 @@ import React from 'react';
 import styles from '../styles'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { View, Text, SafeAreaView, TextInput, FlatList, Image } from 'react-native';
+import { View, Text, SafeAreaView, TextInput, FlatList, Image, TouchableOpacity } from 'react-native';
 import db from '../config/firebase';
+import { getUser } from '../actions/user'
 
 class Search extends React.Component {
 	state = {
@@ -20,6 +21,12 @@ class Search extends React.Component {
 		this.setState({query: search})
 	}
 
+	goToUser = (user) => {
+		console.log(user)
+		this.props.getUser(user.uid)
+		this.props.navigation.navigate('Profile')
+	}
+
   render() {
     return (
       <SafeAreaView style={styles.container2}>
@@ -28,19 +35,19 @@ class Search extends React.Component {
 	        onChangeText={(search) => this.setState({search})}
 	        value={this.state.search}
 	        returnKeyType='send'
-          placeholder='Busca'
+          placeholder='Search'
           onSubmitEditing={this.searchUser}/>
 				<FlatList
 				  data={this.state.query}
-				  keyExtractor={(item) => JSON.stringify(item.date)}
+				  keyExtractor={(item) => JSON.stringify(item.uid)}
 				  renderItem={({ item }) => (
-          <View style={[styles.row, styles.space]}>
+          <TouchableOpacity onPress={() => this.goToUser(item)} style={[styles.row, styles.space]}>
             <Image style={styles.roundImage} source={{uri: item.photo}}/>
             <View style={[styles.container2, styles.left]}>
               <Text style={styles.bold}>{item.username}</Text>
               <Text style={styles.gray}>{item.bio}</Text>
             </View>
-          </View>
+          </TouchableOpacity>
 				)} />
       </SafeAreaView>
     );
@@ -48,7 +55,7 @@ class Search extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ }, dispatch)
+  return bindActionCreators({ getUser }, dispatch)
 }
 
 const mapStateToProps = (state) => {

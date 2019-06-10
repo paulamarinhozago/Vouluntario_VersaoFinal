@@ -49,8 +49,21 @@ export const SearchNavigator = createAppContainer(createStackNavigator(
   {
     Search: { 
       screen: SearchScreen,
-      header: null
-    }
+      navigationOptions: {
+        header: null
+      }
+    },
+    Profile: { 
+      screen: ProfileScreen,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Perfil',
+        headerLeft: (
+          <TouchableOpacity onPress={() => navigation.goBack()} >
+            <Ionicons style={styles.icon} name={'ios-arrow-back'} size={30}/>
+          </TouchableOpacity>
+        )
+      })
+    },
   }
 ));
 
@@ -113,7 +126,7 @@ export const ActivityNavigator = createAppContainer(createStackNavigator(
 
 export const ProfileNavigator = createAppContainer(createStackNavigator(
   {
-    Profile: { 
+    MyProfile: { 
       screen: ProfileScreen,
       navigationOptions: ({ navigation }) => ({
         headerTitle: 'Perfil',

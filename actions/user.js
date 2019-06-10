@@ -34,11 +34,16 @@ export const login = () => {
 	}
 }
 
-export const getUser = (uid) => {
+export const getUser = (uid, type) => {
 	return async (dispatch, getState) => {
 		try {
 			const user = await db.collection('users').doc(uid).get()
-			dispatch({type: 'LOGIN', payload: user.data()})
+			console.log(type)
+			if(type === 'LOGIN'){
+				dispatch({type: 'LOGIN', payload: user.data()})
+			} else {
+				dispatch({type: 'GET_PROFILE', payload: user.data()})
+			}
 		} catch (e) {
 			alert(e)
 		}

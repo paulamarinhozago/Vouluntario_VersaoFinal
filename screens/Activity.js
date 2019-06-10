@@ -32,7 +32,7 @@ class Activity extends React.Component {
             <Image style={styles.roundImage} source={{uri: item.likerPhoto}}/>
             <View style={[styles.container2, styles.left]}>
               <Text style={styles.bold}>{item.likerName}</Text>
-              <Text style={styles.gray}>Vai ao seu evento</Text>
+              <Text style={styles.gray}>Vai ao seu evento!</Text>
               <Text style={[styles.gray, styles.small]}>{moment(item.date).format('ll')}</Text>
             </View>
             <Image style={styles.roundImage} source={{uri: item.postPhoto}}/>

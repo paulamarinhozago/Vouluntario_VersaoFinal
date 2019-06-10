@@ -3,21 +3,16 @@ import styles from '../styles'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Text, View, TextInput } from 'react-native';
-import { addComment, getComments } from '../actions/post';
+import { addComment } from '../actions/post';
 
 class Comment extends React.Component {
   state = {
   	comment: ''
   }
 
-  componentDidMount = () => {
-    const { params } = this.props.navigation.state
-    this.props.getComments(params)
-  }
-
   postComment = () => {
   	const { params } = this.props.navigation.state
-  	this.props.addComment(this.state.comment, params)
+  	this.props.addComment(this.state.comment, params.id)
   	this.setState({comment: ''})
   }
 
@@ -30,7 +25,7 @@ class Comment extends React.Component {
 	        onChangeText={(comment) => this.setState({comment})}
 	        value={this.state.comment}
 	        returnKeyType='send'
-          placeholder='Add Comment'
+          placeholder='Escreva um comentário!'
           onSubmitEditing={this.postComment}/>
       </View>
     );
@@ -38,13 +33,12 @@ class Comment extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ addComment, getComments }, dispatch)
+  return bindActionCreators({ addComment }, dispatch)
 }
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user,
-    post: state.post
+    user: state.user
   }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from 'firebase';
-import { Text, View, Image, TouchableOpacity} from 'react-native';
+import { Text, View, Image, TouchableOpacity, FlatList} from 'react-native';
 import { connect } from 'react-redux'
 import styles from '../styles'
 
@@ -23,14 +23,14 @@ class Profile extends React.Component {
           state.routeName === 'MyProfile' ?
           <View>
             <TouchableOpacity style={styles.buttonSmall} onPress={() => this.props.navigation.navigate('Edit')}>
-              <Text style={styles.bold}>Edit Profile</Text>
+              <Text style={{color: 'white', fontSize:16, fontWeight:'bold'}} >Edit Profile</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonSmall} onPress={() => firebase.auth().signOut()}>
-              <Text style={styles.bold}>Logout</Text>
+              <Text style={{color: 'white', fontSize:16, fontWeight:'bold'}} >Logout</Text>
             </TouchableOpacity>
           </View> : 
           <TouchableOpacity style={styles.buttonSmall} onPress={() => this.props.navigation.navigate('Chat')}>
-            <Text style={styles.bold}>Message</Text>
+            <Text style={{color: 'white', fontSize:16, fontWeight:'bold'}} >Message</Text>
           </TouchableOpacity>
         }
         <FlatList

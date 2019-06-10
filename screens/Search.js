@@ -22,7 +22,7 @@ class Search extends React.Component {
 
   render() {
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={styles.container2}>
 	      <TextInput
 	        style={styles.input}
 	        onChangeText={(search) => this.setState({search})}
@@ -36,7 +36,7 @@ class Search extends React.Component {
 				  renderItem={({ item }) => (
           <View style={[styles.row, styles.space]}>
             <Image style={styles.roundImage} source={{uri: item.photo}}/>
-            <View style={[styles.container, styles.left]}>
+            <View style={[styles.container2, styles.left]}>
               <Text style={styles.bold}>{item.username}</Text>
               <Text style={styles.gray}>{item.bio}</Text>
             </View>

@@ -41,7 +41,7 @@ class Comment extends React.Component {
   	        onChangeText={(comment) => this.setState({comment})}
   	        value={this.state.comment}
   	        returnKeyType='send'
-            placeholder='Add Comment'
+            placeholder='Escreva um comentário!'
             onSubmitEditing={this.postComment}/>
       </KeyboardAvoidingView>
     );

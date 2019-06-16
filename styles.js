@@ -143,7 +143,7 @@ export default styles = StyleSheet.create({
   },
 
   squareLarge: {
-    width: width*.5, 
+    width: '100%', 
     height: 125,
     margin: 1,
     backgroundColor: '#d3d3d3'

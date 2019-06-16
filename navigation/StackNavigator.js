@@ -11,6 +11,7 @@ import MapScreen from '../screens/Map'
 import EditScreen from '../screens/Edit'
 import CommentScreen from '../screens/Comment'
 import ChatScreen from '../screens/Chat'
+import MessagesScreen from '../screens/Messages'
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { TouchableOpacity, Text} from 'react-native'
 
@@ -132,7 +133,7 @@ export const ProfileNavigator = createAppContainer(createStackNavigator(
       navigationOptions: ({ navigation }) => ({
         headerTitle: 'Perfil',
         headerRight: (
-          <TouchableOpacity onPress={() => navigation.navigate('ChatScreen')} >
+          <TouchableOpacity onPress={() => navigation.navigate('Messages')} >
             <Ionicons style={{marginRight: 10}} name={'ios-chatboxes'} size={30}/>
           </TouchableOpacity>
         ),

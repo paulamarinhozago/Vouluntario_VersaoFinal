@@ -85,6 +85,8 @@ export const signup = () => {
 					username: username,
 					photo: '',
 					token: null,
+					followers: [],
+					following: []
 				}
 				db.collection('users').doc(response.user.uid).set(user)
 				dispatch({type: 'LOGIN', payload: user})
@@ -95,4 +97,37 @@ export const signup = () => {
 	}
 }
 
+export const followUser = (user) => {
+	return async ( dispatch, getState ) => {
+	  const { uid, photo, username } = getState().user
+	  try {
+			  db.collection('users').doc(user.uid).update({
+				  followers: firebase.firestore.FieldValue.arrayUnion(uid)
+			  })
+			  db.collection('users').doc(uid).update({
+				  following: firebase.firestore.FieldValue.arrayUnion(user.uid)
+			  })
+			  dispatch(getUser(user.uid))
+	  } catch(e) {
+		console.error(e)
+	  }
+	}
+  }
+  
+  export const unfollowUser = (user) => {
+	return async ( dispatch, getState ) => {
+	  const { uid, photo, username } = getState().user
+	  try {
+			  db.collection('users').doc(user.uid).update({
+				  followers: firebase.firestore.FieldValue.arrayRemove(uid)
+			  })
+			  db.collection('users').doc(uid).update({
+				  following: firebase.firestore.FieldValue.arrayRemove(user.uid)
+			  })
+			  dispatch(getUser(user.uid))
+	  } catch(e) {
+		console.error(e)
+	  }
+	}
+  }
 

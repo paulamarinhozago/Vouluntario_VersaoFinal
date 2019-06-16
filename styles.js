@@ -141,6 +141,14 @@ export default styles = StyleSheet.create({
     borderRadius: 20,
     margin: 5
   },
+
+  squareLarge: {
+    width: width*.5, 
+    height: 125,
+    margin: 1,
+    backgroundColor: '#d3d3d3'
+  },
+
   cameraButton: {
     height: 50, 
     width: 50,

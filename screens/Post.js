@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import { ImagePicker, Location, Permissions } from 'expo';
 import { NavigationEvents } from 'react-navigation';
 import { updateDescription, updateLocation, uploadPost, updatePhoto } from '../actions/post'
-import { FlatList, Modal, SafeAreaView, Text, View, TextInput, TouchableOpacity, Keyboard, KeyboardAvoidingView, Image } from 'react-native';
+import { FlatList, Modal, SafeAreaView, Text, View, TextInput, TouchableOpacity, Keyboard, KeyboardAvoidingView, Image, ScrollView } from 'react-native';
 const GOOGLE_API = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
 import { uploadPhoto } from '../actions'
 
@@ -21,6 +21,7 @@ class Post extends React.Component {
 
   post = () => {
     this.props.uploadPost()
+    this.props.getPosts()
     this.props.navigation.navigate('Home')
   }
 
@@ -68,6 +69,7 @@ class Post extends React.Component {
     return (
       <KeyboardAvoidingView enabled behavior='padding' style={styles.container}>
       <View style={styles.container}>
+      <ScrollView>
         <NavigationEvents onWillFocus={this.onWillFocus}/>
         <Modal animationType='slide' transparent={false} visible={this.state.showModal}>
           <SafeAreaView style={[styles.container, styles.center]}>
@@ -109,6 +111,7 @@ class Post extends React.Component {
       	<TouchableOpacity style={styles.button_1} onPress={this.post} >
             <Text style={{color: 'white', fontSize:18, fontWeight:'bold'}}>Compartilhar</Text>
         </TouchableOpacity>
+      </ScrollView>
       </View>
       </KeyboardAvoidingView>
     );

@@ -1,5 +1,6 @@
 import firebase from 'firebase'
 import db from '../config/firebase'
+import orderBy from 'lodash/orderBy'
 
 export const updateEmail = (email) => {
 	return {type: 'UPDATE_EMAIL', payload: email}
@@ -37,12 +38,20 @@ export const login = () => {
 export const getUser = (uid, type) => {
 	return async (dispatch, getState) => {
 		try {
-			const user = await db.collection('users').doc(uid).get()
-			console.log(type)
+			const userQuery = await db.collection('users').doc(uid).get()
+			let user = userQuery.data()
+
+      let posts = []
+      const postsQuery = await db.collection('posts').where('uid', '==', uid).get()
+      postsQuery.forEach(function(response) {
+        posts.push(response.data())
+      })
+      user.posts = orderBy(posts, 'date','desc')
+
 			if(type === 'LOGIN'){
-				dispatch({type: 'LOGIN', payload: user.data()})
+				dispatch({type: 'LOGIN', payload: user })
 			} else {
-				dispatch({type: 'GET_PROFILE', payload: user.data()})
+				dispatch({type: 'GET_PROFILE', payload: user })
 			}
 		} catch (e) {
 			alert(e)

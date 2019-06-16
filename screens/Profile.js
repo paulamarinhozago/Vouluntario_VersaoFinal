@@ -35,7 +35,7 @@ class Profile extends React.Component {
         }
         <FlatList
           horizontal={false}
-          numColumns={3}
+          numColumns={2}
           data={user.posts}
           keyExtractor={(item) => JSON.stringify(item.date)}
           renderItem={({ item }) => <Image style={styles.squareLarge} source={{uri: item.postPhoto}}/> }/>

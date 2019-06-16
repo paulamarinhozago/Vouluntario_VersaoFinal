@@ -29,8 +29,8 @@ class Profile extends React.Component {
               <Text style={{color: 'white', fontSize:16, fontWeight:'bold'}} >Sair</Text>
             </TouchableOpacity>
           </View> : 
-          <TouchableOpacity style={styles.buttonSmall} onPress={() => this.props.navigation.navigate('Chat', user.uid)}>
-            <Text style={{color: 'white', fontSize:16, fontWeight:'bold'}} >Conversar</Text>
+          <TouchableOpacity style={styles.buttonSmall} onPress={() => this.props.navigation.navigate('Chat', user.uid )}>
+            <Text style={styles.bold}>Mensagem</Text>
           </TouchableOpacity>
         }
         <FlatList

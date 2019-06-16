@@ -28,6 +28,15 @@ const profile = (state = {}, action) => {
   }
 }
 
+const messages = (state = {}, action) => {
+  switch (action.type) {
+    case 'GET_MESSAGES':
+      return action.payload
+    default:
+      return state
+  }
+}
+
 const post = (state=null, action) => {
   switch (action.type) {
     case 'UPDATE_PHOTO':
@@ -57,10 +66,11 @@ const modal = (state = null, action) => {
 }
 
 const rootReducer = combineReducers({
-    user,
-    profile,
-    post,
-    modal
+  user,
+  post,
+  modal,
+  profile,
+  messages
 })
 
 export default rootReducer

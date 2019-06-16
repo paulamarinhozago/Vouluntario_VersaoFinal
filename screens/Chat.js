@@ -27,7 +27,7 @@ class Chat extends React.Component {
           onChangeText={(message) => this.setState({message})}
           value={this.state.message}
           returnKeyType='send'
-          placeholder='Send Message'
+          placeholder='Enviar'
           onSubmitEditing={this.sendMessage}/>
       </KeyboardAvoidingView>
     );

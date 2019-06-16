@@ -21,3 +21,22 @@ export const uploadPhoto = (image) => {
     }
   }
 }
+
+export const addMessage = (id, text) => {
+  return (dispatch, getState) => {
+    const { uid, photo, username } = getState().user
+    try {
+      const message = {
+        members: [id, uid].sort(),
+        message: text,
+        photo: photo,
+        username: username,
+        uid: uid,
+        date: new Date().getTime(),
+      }
+      db.collection('messages').doc().set(message)
+    } catch(e) {
+      console.error(e)
+    }
+  }
+}

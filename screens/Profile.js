@@ -23,14 +23,14 @@ class Profile extends React.Component {
           state.routeName === 'MyProfile' ?
           <View>
             <TouchableOpacity style={styles.buttonSmall} onPress={() => this.props.navigation.navigate('Edit')}>
-              <Text style={{color: 'white', fontSize:16, fontWeight:'bold'}} >Edit Profile</Text>
+              <Text style={{color: 'white', fontSize:16, fontWeight:'bold'}} >Editar Perfil</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonSmall} onPress={() => firebase.auth().signOut()}>
-              <Text style={{color: 'white', fontSize:16, fontWeight:'bold'}} >Logout</Text>
+              <Text style={{color: 'white', fontSize:16, fontWeight:'bold'}} >Sair</Text>
             </TouchableOpacity>
           </View> : 
           <TouchableOpacity style={styles.buttonSmall} onPress={() => this.props.navigation.navigate('Chat')}>
-            <Text style={{color: 'white', fontSize:16, fontWeight:'bold'}} >Message</Text>
+            <Text style={{color: 'white', fontSize:16, fontWeight:'bold'}} >Conversar</Text>
           </TouchableOpacity>
         }
         <FlatList

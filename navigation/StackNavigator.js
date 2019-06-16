@@ -10,6 +10,7 @@ import CameraScreen from '../screens/Camera'
 import MapScreen from '../screens/Map'
 import EditScreen from '../screens/Edit'
 import CommentScreen from '../screens/Comment'
+import ChatScreen from '../screens/Chat'
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { TouchableOpacity, Text} from 'react-native'
 

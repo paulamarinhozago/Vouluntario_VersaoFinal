@@ -132,7 +132,7 @@ export const ProfileNavigator = createAppContainer(createStackNavigator(
       navigationOptions: ({ navigation }) => ({
         headerTitle: 'Perfil',
         headerRight: (
-          <TouchableOpacity onPress={() => console.log('Message')} >
+          <TouchableOpacity onPress={() => navigation.navigate('ChatScreen')} >
             <Ionicons style={{marginRight: 10}} name={'ios-chatboxes'} size={30}/>
           </TouchableOpacity>
         ),

@@ -21,14 +21,14 @@ class Messages extends React.Component {
   render() {
     console.log(groupBy(this.props.messages,'members'))
     return ( 
-      <View style={styles.container}>
+      <View style={styles.container2}>
         <FlatList
           keyExtractor={(item) => JSON.stringify(item[0].date)}
           data={values(groupBy(this.props.messages,'members'))}
           renderItem={({ item, index }) => (
           <TouchableOpacity onPress={() => this.goToChat(item[0].members)} style={[styles.row, styles.space]}>
             <Image style={styles.roundImage} source={{uri: item[0].photo}}/>
-            <View style={[styles.container, styles.left]}>
+            <View style={[styles.container2, styles.left]}>
               <Text style={styles.bold}>{item[0].username}</Text>
               <Text style={styles.gray}>{item[0].message}</Text>
               <Text style={[styles.gray, styles.small]}>{moment(item[0].date).format('ll')}</Text>

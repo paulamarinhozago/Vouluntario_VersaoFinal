@@ -21,7 +21,7 @@ class Chat extends React.Component {
     const { params } = this.props.navigation.state
     const { uid } = this.props.user
     return (
-      <KeyboardAvoidingView enabled behavior='padding' style={styles.container}>
+      <KeyboardAvoidingView enabled behavior='padding' style={styles.container2}>
         <FlatList
           inverted
           keyExtractor={(item) => JSON.stringify(item.date)}
@@ -29,7 +29,7 @@ class Chat extends React.Component {
           renderItem={({ item }) => (
           <TouchableOpacity onPress={() => this.goToChat(item)} style={[styles.row, styles.space]}>
             { item.uid !== uid ? <Image style={styles.roundImage} source={{uri: item.photo}}/> : null}
-            <View style={[styles.container, item.uid === uid ? styles.right : styles.left]}>
+            <View style={[styles.container2, item.uid === uid ? styles.right : styles.left]}>
               <Text style={styles.bold}>{item.username}</Text>
               <Text style={styles.gray}>{item.message}</Text>
               <Text style={[styles.gray, styles.small]}>{moment(item.date).format('ll')}</Text>

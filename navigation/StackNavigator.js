@@ -150,6 +150,17 @@ export const ProfileNavigator = createAppContainer(createStackNavigator(
         )
       })
     },
+    Messages: {
+      screen: MessagesScreen,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Messages',
+        headerLeft: (
+          <TouchableOpacity onPress={() => navigation.goBack()} >
+            <Ionicons style={styles.icon} name={'ios-arrow-back'} size={30}/>
+          </TouchableOpacity>
+        )
+      })
+    },
     Chat: {
       screen: ChatScreen,
       navigationOptions: ({ navigation }) => ({
@@ -160,7 +171,7 @@ export const ProfileNavigator = createAppContainer(createStackNavigator(
           </TouchableOpacity>
         )
       })
-    }
+    },
   }
 ));
 

@@ -30,19 +30,18 @@ class Profile extends React.Component {
           <View style={styles.center}>
             <Image style={styles.roundImage} source={{uri: user.photo}}/>
             <Text>{user.username}</Text>
-            <Text>{user.bio}</Text>
           </View>
           <View style={styles.center}>
             <Text style={styles.bold}>{user.posts.length}</Text>
-            <Text>posts</Text>
+            <Text>eventos</Text>
           </View>
           <View style={styles.center}>
             <Text style={styles.bold}>{user.followers.length}</Text>
-            <Text>followers</Text>
+            <Text>seguidores</Text>
           </View>
           <View style={styles.center}>
             <Text style={styles.bold}>{user.following.length}</Text>
-            <Text>following</Text>
+            <Text>seguindo</Text>
           </View>
         </View>
         <View style={styles.center}>
@@ -50,18 +49,18 @@ class Profile extends React.Component {
           state.routeName === 'MyProfile' ?
           <View style={styles.row}>
             <TouchableOpacity style={styles.buttonSmall} onPress={() => this.props.navigation.navigate('Edit')}>
-              <Text style={styles.bold}>Edit Profile</Text>
+              <Text style={{color:'white', fontSize:16, fontWeight:'bold'}}>Editar Perfil</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonSmall} onPress={() => firebase.auth().signOut()}>
-              <Text style={styles.bold}>Logout</Text>
+              <Text style={{color:'white', fontSize:16, fontWeight:'bold'}}>Sair</Text>
             </TouchableOpacity>
           </View> : 
           <View style={styles.row}>
             <TouchableOpacity style={styles.buttonSmall} onPress={() => this.follow(user)}>
-              <Text style={styles.bold}>{user.followers.indexOf(this.props.user.uid) >= 0 ? 'UnFollow User' : 'Follow User'}</Text>
+              <Text style={{color:'white', fontSize:16, fontWeight:'bold'}}>{user.followers.indexOf(this.props.user.uid) >= 0 ? 'UnFollow' : 'Seguir'}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonSmall} onPress={() => this.props.navigation.navigate('Chat', user.uid )}>
-              <Text style={styles.bold}>Message</Text>
+              <Text style={{color:'white', fontSize:16, fontWeight:'bold'}}>Mensagem</Text>
             </TouchableOpacity>
           </View>
         }

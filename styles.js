@@ -16,6 +16,7 @@ export default styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   space: {
+    alignItems: 'center',
     justifyContent: 'space-between',
   },
   left: {
